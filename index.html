@@ -45,7 +45,7 @@
 			<img src="img/nana.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">John Doe</a></h1>
+		  <h1 class="header-author"><a href="/">Cathy Chen</a></h1>
 		</hgroup>
 		
 
@@ -101,7 +101,7 @@
 				<img src="img/nana.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">John Doe</h1>
+			  <h1 class="header-author js-header-author">Cathy Chen</h1>
 			</hgroup>
 			
 			
@@ -147,39 +147,115 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-HashTable" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/20/hello-world/">Hello World</a>
+      <a class="article-title" href="/2019/11/21/HashTable/">HashTable</a>
     </h1>
   
 
         
-        <a href="/2019/11/20/hello-world/" class="archive-article-date">
-  	<time datetime="2019-11-20T11:44:00.421Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-20</time>
+        <a href="/2019/11/21/HashTable/" class="archive-article-date">
+  	<time datetime="2019-11-21T12:22:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+        <h2 id="哈希表的原理及其相关算法"><a href="#哈希表的原理及其相关算法" class="headerlink" title="哈希表的原理及其相关算法"></a>哈希表的原理及其相关算法</h2><p>哈希表把任意长度的输入通过一种类似压缩映射的数学函数变换成固定长度的输出，并存储在一个有限的地址空间里。<br>哈希映射可表示为 key=f(value),构建哈希表需要考虑冗余度和复杂度。</p>
+<p>利用哈希表实现查找的步骤为：</p>
+<ul>
+<li>用给定的哈希函数f将待存数组value构造哈希表，尽量做到key尽可能分散，映射复杂度低。常见的有五种：直接定址key=value+c；除法取余key=value%c；数学分析；平方取中；折叠value=125860,key=12+58+60=130取key=30.</li>
+<li>选择冲突处理方法解决地址冲突，可选开放地址法（向后查找）和链式地址法（“链表的数组”）</li>
+<li>在哈希表的基础上执行哈希查找</li>
+</ul>
+<p>实现哈希映射为“除法取余法”，冲突为“开放地址线性探测法”，代码如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">public class HashSearch&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int hashlength = 13;</span><br><span class="line">        int[] array = &#123;12,6,5,8,20,23,56&#125;;</span><br><span class="line">        int[] hash = new int[hashlength];</span><br><span class="line">        for(int i=0;i&lt;array.length;i++)&#123;</span><br><span class="line">            insertHash(hash,hashlength,array[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        int result = searchHash(hash,hashlength,23);</span><br><span class="line">        if(result!= -1)</span><br><span class="line">            System.out.println(&quot;find it&quot; + result);</span><br><span class="line">        else</span><br><span class="line">            System.out.println(&quot;none&quot;);</span><br><span class="line">            </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">/****</span><br><span class="line"> * searchHash</span><br><span class="line"> * @param hash</span><br><span class="line"> * @param hashlength</span><br><span class="line"> * @param value</span><br><span class="line"> * @return</span><br><span class="line"> */</span><br><span class="line">public static int searchHash(int[] hash, int hashlength, int value)&#123;</span><br><span class="line">    int hashkey = value % hashlength;</span><br><span class="line">    while (hash[hashkey] != 0 &amp;&amp; hash[hashkey]!= value)&#123;</span><br><span class="line">        hashkey = (++hashkey) % hashlength;</span><br><span class="line">    &#125;</span><br><span class="line">    if (hash[hashkey]==0)</span><br><span class="line">        return -1;</span><br><span class="line">    return hashkey;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/****</span><br><span class="line"> * insertHash</span><br><span class="line"> * @param hash</span><br><span class="line"> * @param hashlength</span><br><span class="line"> * @param value</span><br><span class="line"> */</span><br><span class="line">public static void insertHash(int[] hash, int hashlength, int value)&#123;</span><br><span class="line">    int hashkey = value % hashlength;</span><br><span class="line">    while (hash[hashkey]!=0)&#123;</span><br><span class="line">        hashkey = (++hashkey) % hashlength;</span><br><span class="line">    &#125;</span><br><span class="line">    hash[hashkey] = value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>实现哈希映射为“除法取余法”，冲突为“链式地址法”，代码如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">package com.ys.hash;</span><br><span class="line">import com.ys.hash.SortLink.LinkNode;</span><br><span class="line"></span><br><span class="line">public class HashChain&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int hashlength = 13;</span><br><span class="line">        int[] array = &#123;12,6,5,8,20,23,56&#125;;</span><br><span class="line">        hash = new SortLink[hashlength];</span><br><span class="line">        for(int i=0;i&lt;array.length;i++)&#123;</span><br><span class="line">            insertHash(hash,hashlength,array[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        int result = searchHash(hash,hashlength,23);</span><br><span class="line">        if(result!= -1)</span><br><span class="line">            System.out.println(&quot;find it&quot; + result);</span><br><span class="line">        else</span><br><span class="line">            System.out.println(&quot;none&quot;);</span><br><span class="line">            </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">/****</span><br><span class="line"> * insertHash</span><br><span class="line"> * @param hash</span><br><span class="line"> * @param hashlength</span><br><span class="line"> * @param value</span><br><span class="line"> */</span><br><span class="line">public static void insertHash(SortLink[] hash, int hashlength, int value)&#123;</span><br><span class="line">    int hashkey = value % hashlength;</span><br><span class="line">    hash[hashkey].insert(value);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/****</span><br><span class="line"> * searchHash</span><br><span class="line"> * @param hash</span><br><span class="line"> * @param hashlength</span><br><span class="line"> * @param value</span><br><span class="line"> * @return</span><br><span class="line"> */</span><br><span class="line">public static int searchHash(SortLink[] hash, int hashlength, int value)&#123;</span><br><span class="line">    int hashkey = value % hashlength;</span><br><span class="line">    LinkNode node = hash[hashkey].find(value);</span><br><span class="line">    return node;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/21/HashTable/">展开全文 >></a>
+        </p>
+      
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
 
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-JavaLearningNote-Thinking-in-java" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/21/JavaLearningNote-Thinking-in-java/">JavaLearningNote-Thinking-in-java</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/21/JavaLearningNote-Thinking-in-java/" class="archive-article-date">
+  	<time datetime="2019-11-21T03:19:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="chap-2-一切都是对象"><a href="#chap-2-一切都是对象" class="headerlink" title="chap.2 一切都是对象"></a>chap.2 一切都是对象</h2><p>用引用(遥控器)操纵对象(电视机)，“String s”创建引用的同时最好初始化关联字符串对象 String s = “adfdf” ，java将未初始化的变量视为错误。</p>
+<p>String s = new String(“dsffff”) new操作符将引用与新的对象相关联</p>
+<p>五个存储数据的位置</p>
+<ul>
+<li>寄存器 </li>
+<li>堆栈</li>
+<li>堆</li>
+<li>常量存储</li>
+<li>非RAM存储</li>
+</ul>
+<p>基本类型、包装器<br>高精度数字<br>java中数组<br>java对象作用域</p>
+<hr>
+<p>Java类中可设置两种类型的元素：字段和方法。调用方法的行为通常被称为发送消息给对象。</p>
+<p>方法的参数列表指定</p>
+<hr>
+<p>一个Java程序的构建：</p>
+<p>static：</p>
 
       
 
@@ -192,7 +268,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/20/hello-world/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/11/21/JavaLearningNote-Thinking-in-java/">展开全文 >></a>
         </p>
       
 
@@ -307,7 +383,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 John Doe
+    		&copy; 2019 Cathy Chen
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
