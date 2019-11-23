@@ -6,16 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>JavaLearningNote-Thinking-in-java | Hexo</title>
+  <title>git-learning | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="chap.2 一切都是对象用引用(遥控器)操纵对象(电视机)，“String s”创建引用的同时最好初始化关联字符串对象 String s = “adfdf” ，java将未初始化的变量视为错误。 String s = new String(“dsffff”) new操作符将引用与新的对象相关联 五个存储数据的位置  寄存器  堆栈 堆 常量存储 非RAM存储  基本类型、包装器：long 数据类">
+  <meta name="description" content="将本地已有项目关联到github新的项目   前期准备：ssh key &amp;amp; git 在github上新建repository，设命名为“repo”，地址为“git@github.com:111&#x2F;repo.git” 进入本地文件夹，执行初始化git init 设置远程地址 git remote add + 仓库名 +仓库地址，即 git remote add repo git@github">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaLearningNote-Thinking-in-java">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;21&#x2F;JavaLearningNote-Thinking-in-java&#x2F;index.html">
+<meta property="og:title" content="git-learning">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;23&#x2F;git-learning&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="chap.2 一切都是对象用引用(遥控器)操纵对象(电视机)，“String s”创建引用的同时最好初始化关联字符串对象 String s = “adfdf” ，java将未初始化的变量视为错误。 String s = new String(“dsffff”) new操作符将引用与新的对象相关联 五个存储数据的位置  寄存器  堆栈 堆 常量存储 非RAM存储  基本类型、包装器：long 数据类">
+<meta property="og:description" content="将本地已有项目关联到github新的项目   前期准备：ssh key &amp;amp; git 在github上新建repository，设命名为“repo”，地址为“git@github.com:111&#x2F;repo.git” 进入本地文件夹，执行初始化git init 设置远程地址 git remote add + 仓库名 +仓库地址，即 git remote add repo git@github">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-23T06:06:37.792Z">
+<meta property="og:updated_time" content="2019-11-23T07:31:43.233Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -148,59 +148,41 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-JavaLearningNote-Thinking-in-java" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-git-learning" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      JavaLearningNote-Thinking-in-java
+      git-learning
     </h1>
   
 
         
-        <a href="/2019/11/21/JavaLearningNote-Thinking-in-java/" class="archive-article-date">
-  	<time datetime="2019-11-21T03:19:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-21</time>
+        <a href="/2019/11/23/git-learning/" class="archive-article-date">
+  	<time datetime="2019-11-23T07:18:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="chap-2-一切都是对象"><a href="#chap-2-一切都是对象" class="headerlink" title="chap.2 一切都是对象"></a>chap.2 一切都是对象</h2><p>用引用(遥控器)操纵对象(电视机)，“String s”创建引用的同时最好初始化关联字符串对象 String s = “adfdf” ，java将未初始化的变量视为错误。</p>
-<p>String s = new String(“dsffff”) new操作符将引用与新的对象相关联</p>
-<p>五个存储数据的位置</p>
-<ul>
-<li>寄存器 </li>
-<li>堆栈</li>
-<li>堆</li>
-<li>常量存储</li>
-<li>非RAM存储</li>
+        <ul>
+<li>将本地已有项目关联到github新的项目</li>
 </ul>
-<p>基本类型、包装器：long 数据类型是 64 位有符号的 Java 原始数据类型。 当对整数的计算结果可能超出 int 数据类型的范围时使用<br>高精度数字<br>java中数组<br>java对象作用域</p>
-<hr>
-<p>Java类中可设置两种类型的元素：字段和方法。调用方法的行为通常被称为发送消息给对象。</p>
-<p>方法的参数列表指定</p>
-<hr>
-<p>一个Java程序的构建：</p>
-<p>static：</p>
-<h2 id="chap-3-操作符"><a href="#chap-3-操作符" class="headerlink" title="chap.3 操作符"></a>chap.3 操作符</h2><p>赋值：对基本数据类型的赋值十分简单。但是对对象赋值时由于引用的存在会产生别名机制：</p>
-<p>当你定义一个类之后，创建一个对象即为创建这个类的引用（遥控器），直接令对象之间相等会使遥控器指向相同的对象（引用被覆盖，丢失，被垃圾回收站自动清理）。将一个对象传递给方法时也会产生别名问题。</p>
+<ol start="0">
+<li>前期准备：ssh key &amp; git</li>
+<li>在github上新建repository，设命名为“repo”，地址为“<a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:111/repo.git”</li>
+<li>进入本地文件夹，执行初始化git init</li>
+<li>设置远程地址 git remote add + 仓库名 +仓库地址，即 git remote add repo <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:111/repo.git</li>
+<li>git push repo master</li>
+<li>git pull repo master:可以先将github的代码pull下来</li>
+<li>git push repo master</li>
+</ol>
 <ul>
-<li>++i和i++</li>
-<li>== 和 !=对于基本数据类型和对象比较不尽相同。如果两个对象位于操作符两端，实际进行比较的是两者的引用。此时应该用equals()函数。</li>
+<li>将github代码clone到本地仓库<br>git clone 远程仓库地址</li>
 </ul>
-<p>直接常量:</p>
-<p>按位操作符；</p>
-<p>移位操作符：</p>
-<p>三元操作符：</p>
-<p>字符串操作符：<br>类型转换操作符：</p>
-<h2 id="chap-4-控制执行流程"><a href="#chap-4-控制执行流程" class="headerlink" title="chap.4 控制执行流程"></a>chap.4 控制执行流程</h2><p>foreach</p>
-<p>label：</p>
-<h2 id="chap-5-初始化和清理"><a href="#chap-5-初始化和清理" class="headerlink" title="chap.5 初始化和清理"></a>chap.5 初始化和清理</h2><p>构造器：</p>
-<p>重载的构造器和重载的方法：</p>
-<p>this：this关键字只能在方法内部使用，表示“调用方法的对象的引用” eg return this;或将当前对象传递给其他方法。</p>
 
       
 
@@ -259,7 +241,7 @@
     <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/21/JavaLearningNote-Thinking-in-java/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/23/git-learning/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -273,18 +255,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/11/21/HashTable/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          HashTable
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/11/20/blog-using-technics/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">blog-using-technics</div>
+    <a href="/2019/11/21/HashTable/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HashTable</div>
       <i class="icon-circle-right"></i>
     </a>
   

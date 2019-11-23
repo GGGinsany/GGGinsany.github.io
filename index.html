@@ -147,6 +147,83 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-git-learning" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/23/git-learning/">git-learning</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/23/git-learning/" class="archive-article-date">
+  	<time datetime="2019-11-23T07:18:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>将本地已有项目关联到github新的项目</li>
+</ul>
+<ol start="0">
+<li>前期准备：ssh key &amp; git</li>
+<li>在github上新建repository，设命名为“repo”，地址为“<a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:111/repo.git”</li>
+<li>进入本地文件夹，执行初始化git init</li>
+<li>设置远程地址 git remote add + 仓库名 +仓库地址，即 git remote add repo <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:111/repo.git</li>
+<li>git push repo master</li>
+<li>git pull repo master:可以先将github的代码pull下来</li>
+<li>git push repo master</li>
+</ol>
+<ul>
+<li>将github代码clone到本地仓库<br>git clone 远程仓库地址</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/23/git-learning/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-HashTable" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -249,13 +326,29 @@
 <li>常量存储</li>
 <li>非RAM存储</li>
 </ul>
-<p>基本类型、包装器<br>高精度数字<br>java中数组<br>java对象作用域</p>
+<p>基本类型、包装器：long 数据类型是 64 位有符号的 Java 原始数据类型。 当对整数的计算结果可能超出 int 数据类型的范围时使用<br>高精度数字<br>java中数组<br>java对象作用域</p>
 <hr>
 <p>Java类中可设置两种类型的元素：字段和方法。调用方法的行为通常被称为发送消息给对象。</p>
 <p>方法的参数列表指定</p>
 <hr>
 <p>一个Java程序的构建：</p>
 <p>static：</p>
+<h2 id="chap-3-操作符"><a href="#chap-3-操作符" class="headerlink" title="chap.3 操作符"></a>chap.3 操作符</h2><p>赋值：对基本数据类型的赋值十分简单。但是对对象赋值时由于引用的存在会产生别名机制：</p>
+<p>当你定义一个类之后，创建一个对象即为创建这个类的引用（遥控器），直接令对象之间相等会使遥控器指向相同的对象（引用被覆盖，丢失，被垃圾回收站自动清理）。将一个对象传递给方法时也会产生别名问题。</p>
+<ul>
+<li>++i和i++</li>
+<li>== 和 !=对于基本数据类型和对象比较不尽相同。如果两个对象位于操作符两端，实际进行比较的是两者的引用。此时应该用equals()函数。</li>
+</ul>
+<p>直接常量:</p>
+<p>按位操作符；</p>
+<p>移位操作符：</p>
+<p>三元操作符：</p>
+<p>字符串操作符：<br>类型转换操作符：</p>
+<h2 id="chap-4-控制执行流程"><a href="#chap-4-控制执行流程" class="headerlink" title="chap.4 控制执行流程"></a>chap.4 控制执行流程</h2><p>foreach</p>
+<p>label：</p>
+<h2 id="chap-5-初始化和清理"><a href="#chap-5-初始化和清理" class="headerlink" title="chap.5 初始化和清理"></a>chap.5 初始化和清理</h2><p>构造器：</p>
+<p>重载的构造器和重载的方法：</p>
+<p>this：this关键字只能在方法内部使用，表示“调用方法的对象的引用” eg return this;或将当前对象传递给其他方法。</p>
 
       
 
