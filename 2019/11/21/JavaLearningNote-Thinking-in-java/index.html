@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="chap.2 一切都是对象用引用(遥控器)操纵对象(电视机)，“String s”创建引用的同时最好初始化关联字符串对象 String s = “adfdf” ，java将未初始化的变量视为错误。 String s = new String(“dsffff”) new操作符将引用与新的对象相关联 五个存储数据的位置  寄存器  堆栈 堆 常量存储 非RAM存储  基本类型、包装器：long 数据类">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-23T06:06:37.792Z">
+<meta property="og:updated_time" content="2019-11-25T11:07:09.445Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -198,9 +198,18 @@
 <p>字符串操作符：<br>类型转换操作符：</p>
 <h2 id="chap-4-控制执行流程"><a href="#chap-4-控制执行流程" class="headerlink" title="chap.4 控制执行流程"></a>chap.4 控制执行流程</h2><p>foreach</p>
 <p>label：</p>
-<h2 id="chap-5-初始化和清理"><a href="#chap-5-初始化和清理" class="headerlink" title="chap.5 初始化和清理"></a>chap.5 初始化和清理</h2><p>构造器：</p>
+<h2 id="chap-5-初始化和清理"><a href="#chap-5-初始化和清理" class="headerlink" title="chap.5 初始化和清理"></a>chap.5 初始化和清理</h2><p>构造器：可以用构造器进行初始化，但是无法阻止自动初始化的进行，它发生在构造器被调用之前。</p>
 <p>重载的构造器和重载的方法：</p>
 <p>this：this关键字只能在方法内部使用，表示“调用方法的对象的引用” eg return this;或将当前对象传递给其他方法。</p>
+<p>static：</p>
+<p>清理finalize():</p>
+<p>初始化：java保证所有的变量在使用前都能得到初始化。对于方法中的局部变量，java用编译时的错误来保证；对于类中的数据成员，java会对没有初始化的成员默认一个初始值。</p>
+<p>静态对象的初始化：静态对象初始化只有在必要时刻才会进行，如果创建对象前没有static字样，那么类中的静态对象永远不会被创建；但是静态对象初始化的顺序是，先初始化静态对象，而后是非静态对象。</p>
+<p>数组的初始化：int[] a = {1,2,3};也可以在没有数组时定义一个数组引用 int[] a2; java中可以将一个数组赋值给另一个数组，真正做的只是复制了一个引用。java数组计数从0开始，最大下标为length-1；与cpp不同，如果超出这个边界，会出现运行时错误。 等号左边的引用通过等号关联右边的对象。<br>Arrays.toString()方法属于java.util标准类库，产生一维数组的可打印版本。</p>
+<p>可变参数列表：<br>假设我需要定义一个可变参数数量的函数 </p>
+<p>static void printarray(Object …args);<br>static  void f(int re, String…args);<br>可变参数列表使函数重载变得复杂：</p>
+<p>枚举类型：enum关键字可用作一个类型</p>
+<p>enum与switch的组合：</p>
 
       
 
