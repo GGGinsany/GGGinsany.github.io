@@ -358,6 +358,31 @@
 <p>static void printarray(Object …args);<br>static  void f(int re, String…args);<br>可变参数列表使函数重载变得复杂：</p>
 <p>枚举类型：enum关键字可用作一个类型</p>
 <p>enum与switch的组合：</p>
+<hr>
+<h2 id="chap-6-访问权限控制"><a href="#chap-6-访问权限控制" class="headerlink" title="chap.6 访问权限控制"></a>chap.6 访问权限控制</h2><p>由于名字的潜在冲突，在java中对名称空间进行完全控制并为每个类创建唯一的标识符非常重要。一个Java源代码文件被称为一个编译单元，每个编译单元中有且仅有一个public类并与该文件同名（包括大小写）。单元中其他的类是对外界不可见的，它们主要用来对public类提供支持。</p>
+<p>不带public类的编译单元也是存在的，此时可以对文件随意命名。</p>
+<p>在对.java文件进行编译时，文件中每个类都会生成一个.class文件。如果希望这些构件从属于同一个群组，就可以使用关键字package.  </p>
+<p>package access.filename;<br>import access.filename;</p>
+<p>接口和实现：把数据和方法封装在类中，以及具体实现的隐藏，称为“封装”。public→protected→private。类的使用者从头读起，最为重要的成员是public，因为可以从文件外部调用他们，遇见内部实现细节的非public成员时停止阅读。</p>
+<p>javadoc注释文档功能：</p>
+<p>包：相同目录下不具有package声明的所有文件都被是做该目录下默认包的一部分。</p>
+<p>对于类的访问权限只有两种：public或者包访问权限（default：该类可以由包内任何其他类来创建），如果不希望任何人对该类有访问权限，可以把构造器指定为private，从而阻止任何人创建该类的对象，但是有一个例外，即在该类的static成员内部可以创建。</p>
+<ul>
+<li>将构造器私有化，创建一个public static方法返回一个对象引用。</li>
+<li>设计模式：将构造器私有化，private static方法创建一个对象引用，然后创建一个public static的函数返回上一步的引用。（why？？？？</li>
+</ul>
+<hr>
+<h2 id="chap-7-复用类"><a href="#chap-7-复用类" class="headerlink" title="chap.7 复用类"></a>chap.7 复用类</h2><p>method1 组合：在新的类中产生现有类的对象（在新类中应用现有的类的功能而非接口，用户只能看见新类接口（has-a关系 车子有门，门上有窗户。<br>method2 复用：创建新类（is-a关系<br>method3 代理：拥有更多控制权</p>
+<p>tips:如果想要类具有print的功能，只要编写一个toString()Fangfa即可。</p>
+<p>继承的一般方法是：将所有的数据设置为private，将所有的方法设为public。</p>
+<p>带参数的基类构造器：需在继承类中用super关键字显式地编写调用基类构造器的语句(super关键字用来调用该方法的基类版本)</p>
+<p>try finally 关键字：try定义一块保护区域以待特殊处理 finally表无论发生什么事，一定要做xx</p>
+<p>重载vs.覆写</p>
+<p>@override关键字 防止你在不想重载时意外重载</p>
+<p>final 关键字：表数据恒定不变。对于基本数据类型，final使数值不变；对于对象引用，final使引用固定指向一个对象。根据惯例，既是static又是final的域将用大写并用下划线分隔每个单词。</p>
+<ul>
+<li>对于数据：public表可以用于包之外，static表只有一份，final表常量。</li>
+</ul>
 
       
 
