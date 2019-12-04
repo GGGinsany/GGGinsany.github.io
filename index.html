@@ -323,9 +323,9 @@
 <li>在哈希表的基础上执行哈希查找</li>
 </ul>
 <p>实现哈希映射为“除法取余法”，冲突为“开放地址线性探测法”，代码如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">public class HashSearch&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int hashlength = 13;</span><br><span class="line">        int[] array = &#123;12,6,5,8,20,23,56&#125;;</span><br><span class="line">        int[] hash = new int[hashlength];</span><br><span class="line">        for(int i=0;i&lt;array.length;i++)&#123;</span><br><span class="line">            insertHash(hash,hashlength,array[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        int result = searchHash(hash,hashlength,23);</span><br><span class="line">        if(result!= -1)</span><br><span class="line">            System.out.println(&quot;find it&quot; + result);</span><br><span class="line">        else</span><br><span class="line">            System.out.println(&quot;none&quot;);</span><br><span class="line">            </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">/****</span><br><span class="line"> * searchHash</span><br><span class="line"> * @param hash</span><br><span class="line"> * @param hashlength</span><br><span class="line"> * @param value</span><br><span class="line"> * @return</span><br><span class="line"> */</span><br><span class="line">public static int searchHash(int[] hash, int hashlength, int value)&#123;</span><br><span class="line">    int hashkey = value % hashlength;</span><br><span class="line">    while (hash[hashkey] != 0 &amp;&amp; hash[hashkey]!= value)&#123;</span><br><span class="line">        hashkey = (++hashkey) % hashlength;</span><br><span class="line">    &#125;</span><br><span class="line">    if (hash[hashkey]==0)</span><br><span class="line">        return -1;</span><br><span class="line">    return hashkey;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/****</span><br><span class="line"> * insertHash</span><br><span class="line"> * @param hash</span><br><span class="line"> * @param hashlength</span><br><span class="line"> * @param value</span><br><span class="line"> */</span><br><span class="line">public static void insertHash(int[] hash, int hashlength, int value)&#123;</span><br><span class="line">    int hashkey = value % hashlength;</span><br><span class="line">    while (hash[hashkey]!=0)&#123;</span><br><span class="line">        hashkey = (++hashkey) % hashlength;</span><br><span class="line">    &#125;</span><br><span class="line">    hash[hashkey] = value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>实现哈希映射为“除法取余法”，冲突为“链式地址法”，代码如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">package com.ys.hash;</span><br><span class="line">import com.ys.hash.SortLink.LinkNode;</span><br><span class="line"></span><br><span class="line">public class HashChain&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int hashlength = 13;</span><br><span class="line">        int[] array = &#123;12,6,5,8,20,23,56&#125;;</span><br><span class="line">        hash = new SortLink[hashlength];</span><br><span class="line">        for(int i=0;i&lt;array.length;i++)&#123;</span><br><span class="line">            insertHash(hash,hashlength,array[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        int result = searchHash(hash,hashlength,23);</span><br><span class="line">        if(result!= -1)</span><br><span class="line">            System.out.println(&quot;find it&quot; + result);</span><br><span class="line">        else</span><br><span class="line">            System.out.println(&quot;none&quot;);</span><br><span class="line">            </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">/****</span><br><span class="line"> * insertHash</span><br><span class="line"> * @param hash</span><br><span class="line"> * @param hashlength</span><br><span class="line"> * @param value</span><br><span class="line"> */</span><br><span class="line">public static void insertHash(SortLink[] hash, int hashlength, int value)&#123;</span><br><span class="line">    int hashkey = value % hashlength;</span><br><span class="line">    hash[hashkey].insert(value);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/****</span><br><span class="line"> * searchHash</span><br><span class="line"> * @param hash</span><br><span class="line"> * @param hashlength</span><br><span class="line"> * @param value</span><br><span class="line"> * @return</span><br><span class="line"> */</span><br><span class="line">public static int searchHash(SortLink[] hash, int hashlength, int value)&#123;</span><br><span class="line">    int hashkey = value % hashlength;</span><br><span class="line">    LinkNode node = hash[hashkey].find(value);</span><br><span class="line">    return node;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2019/11/21/HashTable/#more">more >></a>
+        
       
 
       
@@ -404,119 +404,9 @@
 <hr>
 <p>一个Java程序的构建：</p>
 <p>static：</p>
-<h2 id="chap-3-操作符"><a href="#chap-3-操作符" class="headerlink" title="chap.3 操作符"></a>chap.3 操作符</h2><p>赋值：对基本数据类型的赋值十分简单。但是对对象赋值时由于引用的存在会产生别名机制：</p>
-<p>当你定义一个类之后，创建一个对象即为创建这个类的引用（遥控器），直接令对象之间相等会使遥控器指向相同的对象（引用被覆盖，丢失，被垃圾回收站自动清理）。将一个对象传递给方法时也会产生别名问题。</p>
-<ul>
-<li>++i和i++</li>
-<li>== 和 !=对于基本数据类型和对象比较不尽相同。如果两个对象位于操作符两端，实际进行比较的是两者的引用。此时应该用equals()函数。</li>
-</ul>
-<p>直接常量:</p>
-<p>按位操作符；</p>
-<p>移位操作符：</p>
-<p>三元操作符：</p>
-<p>字符串操作符：<br>类型转换操作符：</p>
-<h2 id="chap-4-控制执行流程"><a href="#chap-4-控制执行流程" class="headerlink" title="chap.4 控制执行流程"></a>chap.4 控制执行流程</h2><p>foreach</p>
-<p>label：</p>
-<h2 id="chap-5-初始化和清理"><a href="#chap-5-初始化和清理" class="headerlink" title="chap.5 初始化和清理"></a>chap.5 初始化和清理</h2><p>构造器：可以用构造器进行初始化，但是无法阻止自动初始化的进行，它发生在构造器被调用之前。</p>
-<p>重载的构造器和重载的方法：</p>
-<p>this：this关键字只能在方法内部使用，表示“调用方法的对象的引用” eg return this;或将当前对象传递给其他方法。</p>
-<p>static：</p>
-<p>清理finalize():</p>
-<p>初始化：java保证所有的变量在使用前都能得到初始化。对于方法中的局部变量，java用编译时的错误来保证；对于类中的数据成员，java会对没有初始化的成员默认一个初始值。</p>
-<p>静态对象的初始化：静态对象初始化只有在必要时刻才会进行，如果创建对象前没有static字样，那么类中的静态对象永远不会被创建；但是静态对象初始化的顺序是，先初始化静态对象，而后是非静态对象。</p>
-<p>数组的初始化：int[] a = {1,2,3};也可以在没有数组时定义一个数组引用 int[] a2; java中可以将一个数组赋值给另一个数组，真正做的只是复制了一个引用。java数组计数从0开始，最大下标为length-1；与cpp不同，如果超出这个边界，会出现运行时错误。 等号左边的引用通过等号关联右边的对象。<br>Arrays.toString()方法属于java.util标准类库，产生一维数组的可打印版本。</p>
-<p>可变参数列表：<br>假设我需要定义一个可变参数数量的函数 </p>
-<p>static void printarray(Object …args);<br>static  void f(int re, String…args);<br>可变参数列表使函数重载变得复杂：</p>
-<p>枚举类型：enum关键字可用作一个类型</p>
-<p>enum与switch的组合：</p>
-<hr>
-<h2 id="chap-6-访问权限控制"><a href="#chap-6-访问权限控制" class="headerlink" title="chap.6 访问权限控制"></a>chap.6 访问权限控制</h2><p>由于名字的潜在冲突，在java中对名称空间进行完全控制并为每个类创建唯一的标识符非常重要。一个Java源代码文件被称为一个编译单元，每个编译单元中有且仅有一个public类并与该文件同名（包括大小写）。单元中其他的类是对外界不可见的，它们主要用来对public类提供支持。</p>
-<p>不带public类的编译单元也是存在的，此时可以对文件随意命名。</p>
-<p>在对.java文件进行编译时，文件中每个类都会生成一个.class文件。如果希望这些构件从属于同一个群组，就可以使用关键字package.  </p>
-<p>package access.filename;<br>import access.filename;</p>
-<p>接口和实现：把数据和方法封装在类中，以及具体实现的隐藏，称为“封装”。public→protected→private。类的使用者从头读起，最为重要的成员是public，因为可以从文件外部调用他们，遇见内部实现细节的非public成员时停止阅读。</p>
-<p>javadoc注释文档功能：</p>
-<p>包：相同目录下不具有package声明的所有文件都被是做该目录下默认包的一部分。</p>
-<p>对于类的访问权限只有两种：public或者包访问权限（default：该类可以由包内任何其他类来创建），如果不希望任何人对该类有访问权限，可以把构造器指定为private，从而阻止任何人创建该类的对象，但是有一个例外，即在该类的static成员内部可以创建。</p>
-<ul>
-<li>将构造器私有化，创建一个public static方法返回一个对象引用。</li>
-<li>设计模式：将构造器私有化，private static方法创建一个对象引用，然后创建一个public static的函数返回上一步的引用。（why？？？？</li>
-</ul>
-<hr>
-<h2 id="chap-7-复用类"><a href="#chap-7-复用类" class="headerlink" title="chap.7 复用类"></a>chap.7 复用类</h2><p>method1 组合：在新的类中产生现有类的对象（在新类中应用现有的类的功能而非接口，用户只能看见新类接口（has-a关系 车子有门，门上有窗户。<br>method2 复用：创建新类（is-a关系<br>method3 代理：拥有更多控制权<br>在开始一个设计时，优先使用组合，其次是代理，最后必要时为继承</p>
-<p>tips:如果想要类具有print的功能，只要编写一个toString()Fangfa即可。</p>
-<p>继承的一般方法是：将所有的数据设置为private，将所有的方法设为public。</p>
-<p>带参数的基类构造器：需在继承类中用super关键字显式地编写调用基类构造器的语句(super关键字用来调用该方法的基类版本)</p>
-<p>try finally 关键字：try定义一块保护区域以待特殊处理 finally表无论发生什么事，一定要做xx</p>
-<p>重载vs.覆写</p>
-<p>@override关键字 防止你在不想重载时意外重载</p>
-<p>final 关键字：表数据恒定不变。对于基本数据类型，final使数值不变；对于对象引用，final使引用固定指向一个对象。根据惯例，既是static又是final的域将用大写并用下划线分隔每个单词。</p>
-<ul>
-<li>对于数据：public表可以用于包之外，static表只有一份，final表常量。</li>
-<li>对于方法：出于设计，以防任何继承类修改含义；出于效率（早期java版本）</li>
-<li>对于类： final表不希望该类有子类。</li>
-</ul>
-<h2 id="一般来说，类的代码在初次使用时才加载。"><a href="#一般来说，类的代码在初次使用时才加载。" class="headerlink" title="一般来说，类的代码在初次使用时才加载。"></a>一般来说，类的代码在初次使用时才加载。</h2><h2 id="chap-8-多态"><a href="#chap-8-多态" class="headerlink" title="chap.8 多态"></a>chap.8 多态</h2><ul>
-<li>重载：在同一个类中，方法名相同，但参数的个数、参数类型或者返回值(至少有一点不同)不同</li>
-<li>覆盖：指子类和父类的关系，子类继承其父类的方法，方法名、参数类型、参数个数必须相同。子类的方法修饰符的访问权限必须大于等于其父类中被重写的方法的修饰符的权限。</li>
-</ul>
-<p>多态是指，子类和父类的差异性，在类和继承类中调用合适的方法，产生正确的行为。</p>
-<p>静态方法没有多态。</p>
-<p>构造器和多态：构造器实际上是用来检查类有没有正确生成的static方法，static声明是隐式的。在导出类中必须假定所有的基类都是有效的，在构造器内部必须保证所有要使用的成员都构造完毕。多层类的构造器的调用顺序一般来说是：1.基类构造器；2.按照声明顺序调用成员的初始化方法；3.导出类构造器主体。</p>
-<ul>
-<li>构造器内部多态方法: 如果在基类构造器内部调用了即将被覆盖的导出类的方法。可以成功调用，但是这个方法所操纵的成员可能还没有初始化，这会带来错误。</li>
-<li>初始化的实际过程：1.在任何事务发生之前，将分配给对象的存储空间初始化成二进制的0；2.调用基类构造器；3.按照声明顺序调用成员的初始化方法。4.调用导出类的构造器主体。</li>
-<li>所以在构造器内应避免使用复杂的方法，尽量使用不能被覆盖的final的方法。</li>
-</ul>
-<p>package打包一个命名空间，消除潜在冲突可能。编译每个java文件都有大量class文件产生，注意package语句路径与文件路径一致。使用import对该空间进行调用。</p>
-<p>协变返回类型：导出类也可以作为限制为基类的正确返回类型。</p>
-<p>用继承进行设计：继承会加重设计负担。组合更加灵活，因为它可以动态的选择类型；继承在编译时就要知道确切类型。</p>
-<p>向上转型or向下转型：1.导出类与基类有相同的接口，导出类将消息向上转型转发给基类处理，是安全的但是会丢失具体类型信息。2.必须有一种方法确保向下转型的重要性，以免发出该对象不能接受的消息。RTTI（运行时类型识别）</p>
-<h2 id="chap-9-接口"><a href="#chap-9-接口" class="headerlink" title="chap.9 接口"></a>chap.9 接口</h2><p>抽象方法：仅有声明没有方法体。 abstract void f() 抽象类和抽象方法使类的抽象性明确起来，抽象类是很有效的重构工具。</p>
-<p>abstrct:允许人们在类中创建一个或者多个没有任何定义的方法，只提供接口部分，这些实现是由此类的继承者实现的。</p>
-<p>inferface：产生完全抽象的类，没有提供任何具体实现。interface接口通过implement关键字实现之后就成为一个具体的类，可以进行extends。接口的方法自动就是public的，不然没有意义。</p>
-<p>时刻注意命名空间和包访问权限，这可能是你向上转型报错的原因（因为文件夹中另一个文件有着同样命名的类）。</p>
-<p>策略设计模式：创建一个根据传递参数对象不同而具有不同行为的方法。interfaces/Apply.java中有许多不同的均能实现打印功能的处理器，主函数创建一个调用切换开关来在不同的处理器中进行切换。</p>
-<p>适配器设计模式：加入适配器，用做桥梁。接受你所拥有的接口，产生你所需要的接口。</p>
-<p>多重继承：</p>
-<ul>
-<li><p>(自己瞎想)：编写程序的一般设计流程：在接口中定义类和功能，并利用灵活继承和扩展的性能，创建新的接口和对象。主类中生成函数使方法能传到类中，最后在main中调用这些函数。</p>
-</li>
-<li><p>class newclass extends c implements c1;</p>
-</li>
-<li><p>工厂方法：</p>
-</li>
-<li><p>恰当的原则应该是优先选择类而不是接口，接口是一种重要的工具，但容易被滥用。</p>
-</li>
-</ul>
-<hr>
-<h2 id="chap-10-内部类"><a href="#chap-10-内部类" class="headerlink" title="chap.10 内部类"></a>chap.10 内部类</h2><p> outter类包含inner类。在outter中添加一个方法，返回inner对象。内部类还拥有其外围类所有元素的访问权，可以链接到外部类。</p>
-<hr>
-<h2 id="chap-11-持有对象"><a href="#chap-11-持有对象" class="headerlink" title="chap.11 持有对象"></a>chap.11 持有对象</h2><p> List<Apple> apples = new ArrayList<Apple>();//此时ArrayList类向上转型为list，但是这种方式不能总奏效，eg. TreeMap有Map中接口中未包含的方法。</p>
-<ul>
-<li><p>添加一组元素：array和collection类中有很多实用方法，addAll(),asList()</p>
-<p>collection对象名.addAll() &amp; collections.addAll()方法的区别：前者运行速度更快但是不能用前者创建一个collection类。</p>
-<ul>
-<li>容器的打印： 必须使用Arrays.toString()产生数组的可打印表示，但是打印容器无需任何帮助。</li>
-<li>java容器类库中有两种主要类型：collection（list,set,queue）和Map<h4 id="list"><a href="#list" class="headerlink" title="list"></a>list</h4></li>
-<li>ArrayList:擅长随机访问，但插入移除较慢</li>
-<li>LinkList：插入移除代价小，提供优化的顺序访问，随机访问较慢。</li>
-</ul>
-</li>
-</ul>
-<p>迭代器：创建代价很小的轻量级对象，他的工作是遍历并选择序列中的对象，可以不关心底层结构。iterator():next(),hasNext(),remove(). </p>
-<p>ListIterator:可以双向移动的iterator子类型</p>
-<h4 id="Linkedlist"><a href="#Linkedlist" class="headerlink" title="Linkedlist"></a>Linkedlist</h4><p>push(),pop()</p>
-<h4 id="set"><a href="#set" class="headerlink" title="set"></a>set</h4><p>set不保存重复的元素，他会阻止将相同对象的多个实例添加进去。set最常被使用的是测试归属性，可以很容易的询问某个对象是否在set中。因此查找成为set中最重要的操作，因此通常会选择一个HashSet的实现，因为他专门对查找做了优化  set.contain(“H”)</p>
-<p>int &amp; integer:int是直接存数值的基本类型，初始化为0；integer是包装类，对象，初始化为null，一个不指向任何对象的引用。自动包装方法会将int结果自动转为integer对象。etc</p>
-<h4 id="map"><a href="#map" class="headerlink" title="map"></a>map</h4><p>map.containsKey()  map.containsValue()</p>
-<p>Map和其他collection一样，可以轻易扩展到多维eg. Map&lt;Person,List[pets]&gt;</p>
-<h4 id="Queue"><a href="#Queue" class="headerlink" title="Queue"></a>Queue</h4><p>FIFO 在并发编程中很重要，可以安全的将对象从一个任务传输到另一个任务。<br>offer()将一个元素插到队尾或者返回false。element()&amp;peek()均返回队头，但是队头为空时前者报错，后者返回null；remove()&amp;poll()移除队头，但是队头为空时前者报错，后者返回null</p>
-<ul>
-<li>PriorityQueue下一个弹出的元素是最重要的元素。</li>
-<li>创建了任何实现iterator的类，都可以用于foreach语句中</li>
-</ul>
-
+        
+          <a class="article-more-a" href="/2019/11/21/JavaLearningNote-Thinking-in-java/#more">more >></a>
+        
       
 
       
