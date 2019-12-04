@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="chap.2 一切都是对象用引用(遥控器)操纵对象(电视机)，“String s”创建引用的同时最好初始化关联字符串对象 String s = “adfdf” ，java将未初始化的变量视为错误。 String s = new String(“dsffff”) new操作符将引用与新的对象相关联 五个存储数据的位置  寄存器  堆栈 堆 常量存储 非RAM存储  基本类型、包装器：long 数据类">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-01T12:56:29.559Z">
+<meta property="og:updated_time" content="2019-12-03T13:48:26.323Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -254,6 +254,49 @@
 <p>用继承进行设计：继承会加重设计负担。组合更加灵活，因为它可以动态的选择类型；继承在编译时就要知道确切类型。</p>
 <p>向上转型or向下转型：1.导出类与基类有相同的接口，导出类将消息向上转型转发给基类处理，是安全的但是会丢失具体类型信息。2.必须有一种方法确保向下转型的重要性，以免发出该对象不能接受的消息。RTTI（运行时类型识别）</p>
 <h2 id="chap-9-接口"><a href="#chap-9-接口" class="headerlink" title="chap.9 接口"></a>chap.9 接口</h2><p>抽象方法：仅有声明没有方法体。 abstract void f() 抽象类和抽象方法使类的抽象性明确起来，抽象类是很有效的重构工具。</p>
+<p>abstrct:允许人们在类中创建一个或者多个没有任何定义的方法，只提供接口部分，这些实现是由此类的继承者实现的。</p>
+<p>inferface：产生完全抽象的类，没有提供任何具体实现。interface接口通过implement关键字实现之后就成为一个具体的类，可以进行extends。接口的方法自动就是public的，不然没有意义。</p>
+<p>时刻注意命名空间和包访问权限，这可能是你向上转型报错的原因（因为文件夹中另一个文件有着同样命名的类）。</p>
+<p>策略设计模式：创建一个根据传递参数对象不同而具有不同行为的方法。interfaces/Apply.java中有许多不同的均能实现打印功能的处理器，主函数创建一个调用切换开关来在不同的处理器中进行切换。</p>
+<p>适配器设计模式：加入适配器，用做桥梁。接受你所拥有的接口，产生你所需要的接口。</p>
+<p>多重继承：</p>
+<ul>
+<li><p>(自己瞎想)：编写程序的一般设计流程：在接口中定义类和功能，并利用灵活继承和扩展的性能，创建新的接口和对象。主类中生成函数使方法能传到类中，最后在main中调用这些函数。</p>
+</li>
+<li><p>class newclass extends c implements c1;</p>
+</li>
+<li><p>工厂方法：</p>
+</li>
+<li><p>恰当的原则应该是优先选择类而不是接口，接口是一种重要的工具，但容易被滥用。</p>
+</li>
+</ul>
+<hr>
+<h2 id="chap-10-内部类"><a href="#chap-10-内部类" class="headerlink" title="chap.10 内部类"></a>chap.10 内部类</h2><p> outter类包含inner类。在outter中添加一个方法，返回inner对象。内部类还拥有其外围类所有元素的访问权，可以链接到外部类。</p>
+<hr>
+<h2 id="chap-11-持有对象"><a href="#chap-11-持有对象" class="headerlink" title="chap.11 持有对象"></a>chap.11 持有对象</h2><p> List<Apple> apples = new ArrayList<Apple>();//此时ArrayList类向上转型为list，但是这种方式不能总奏效，eg. TreeMap有Map中接口中未包含的方法。</p>
+<ul>
+<li><p>添加一组元素：array和collection类中有很多实用方法，addAll(),asList()</p>
+<p>collection对象名.addAll() &amp; collections.addAll()方法的区别：前者运行速度更快但是不能用前者创建一个collection类。</p>
+<ul>
+<li>容器的打印： 必须使用Arrays.toString()产生数组的可打印表示，但是打印容器无需任何帮助。</li>
+<li>java容器类库中有两种主要类型：collection（list,set,queue）和Map<h4 id="list"><a href="#list" class="headerlink" title="list"></a>list</h4></li>
+<li>ArrayList:擅长随机访问，但插入移除较慢</li>
+<li>LinkList：插入移除代价小，提供优化的顺序访问，随机访问较慢。</li>
+</ul>
+</li>
+</ul>
+<p>迭代器：创建代价很小的轻量级对象，他的工作是遍历并选择序列中的对象，可以不关心底层结构。iterator():next(),hasNext(),remove(). </p>
+<p>ListIterator:可以双向移动的iterator子类型</p>
+<h4 id="Linkedlist"><a href="#Linkedlist" class="headerlink" title="Linkedlist"></a>Linkedlist</h4><p>push(),pop()</p>
+<h4 id="set"><a href="#set" class="headerlink" title="set"></a>set</h4><p>set不保存重复的元素，他会阻止将相同对象的多个实例添加进去。set最常被使用的是测试归属性，可以很容易的询问某个对象是否在set中。因此查找成为set中最重要的操作，因此通常会选择一个HashSet的实现，因为他专门对查找做了优化  set.contain(“H”)</p>
+<p>int &amp; integer:int是直接存数值的基本类型，初始化为0；integer是包装类，对象，初始化为null，一个不指向任何对象的引用。自动包装方法会将int结果自动转为integer对象。etc</p>
+<h4 id="map"><a href="#map" class="headerlink" title="map"></a>map</h4><p>map.containsKey()  map.containsValue()</p>
+<p>Map和其他collection一样，可以轻易扩展到多维eg. Map&lt;Person,List[pets]&gt;</p>
+<h4 id="Queue"><a href="#Queue" class="headerlink" title="Queue"></a>Queue</h4><p>FIFO 在并发编程中很重要，可以安全的将对象从一个任务传输到另一个任务。<br>offer()将一个元素插到队尾或者返回false。element()&amp;peek()均返回队头，但是队头为空时前者报错，后者返回null；remove()&amp;poll()移除队头，但是队头为空时前者报错，后者返回null</p>
+<ul>
+<li>PriorityQueue下一个弹出的元素是最重要的元素。</li>
+<li>创建了任何实现iterator的类，都可以用于foreach语句中</li>
+</ul>
 
       
 
