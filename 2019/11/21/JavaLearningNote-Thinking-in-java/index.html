@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="chap.2 一切都是对象用引用(遥控器)操纵对象(电视机)，“String s”创建引用的同时最好初始化关联字符串对象 String s = “adfdf” ，java将未初始化的变量视为错误。 String s = new String(“dsffff”) new操作符将引用与新的对象相关联 五个存储数据的位置  寄存器  堆栈 堆 常量存储 非RAM存储  基本类型、包装器：long 数据类">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-04T14:34:26.474Z">
+<meta property="og:updated_time" content="2019-12-18T08:58:28.472Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -298,6 +298,22 @@
 <ul>
 <li>PriorityQueue下一个弹出的元素是最重要的元素。</li>
 <li>创建了任何实现iterator的类，都可以用于foreach语句中</li>
+</ul>
+<h2 id="chap-12-异常机制"><a href="#chap-12-异常机制" class="headerlink" title="chap 12 异常机制"></a>chap 12 异常机制</h2><ul>
+<li>try&amp;catch是一套处理可能发生异常情况的语句。异常情况处理和正常处理被分隔开，加强程序的科学性。catch语句的参数类似方法声明<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">try&#123;&#125;</span><br><span class="line">catch(Exception e)&#123;&#125;</span><br></pre></td></tr></table></figure></li>
+<li>throws&amp;throw：throws用于在声明方法时，指定可能抛出的异常。声明函数会出现这样的异常。如果想调用，就必须处理这些异常。在主函数中调用该方法时，如果发生异常，就将异常抛给指定的异常对象。</li>
+</ul>
+<p>throw用来抛出异常。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public void f(String s) throws NullPointerExceptions&#123;</span><br><span class="line">    if (s==null) &#123;throw new NullPointerExceptions&#125;</span><br><span class="line">    else &#123;Syetem.out.Print(s);&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在异常处理程序后加入finally语句，表示无论try块中的异常是否抛出，finally都能得到执行。</li>
+</ul>
+<h2 id="chap-13-字符串"><a href="#chap-13-字符串" class="headerlink" title="chap 13 字符串"></a>chap 13 字符串</h2><p>String对象是不可变的，每一个对string对象进行改变的方法实际上都是对拷贝的对象进行改变。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//common method</span><br><span class="line">str.upcase()</span><br><span class="line">str.IndexOf(str2)</span><br><span class="line">str.subString(1,3)</span><br><span class="line">str.equals()</span><br><span class="line">str.chatAt()</span><br><span class="line">str.replace()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>String s = “abc”+ “fhoi”;//使用多个string对象 or s.append(“abc”);//使用Stringbuilder类? 在javap中可以看到方法一中编译器自动引入了StringBuilder类，因为他更高效。</li>
+<li>因此，当你为一个类编写toString()方法时，如果字符串操作比较简单，可以信任编译器。如果涉及到循环，最好自己创建一个StringBuilder对象，用append来构造最终的结果。</li>
+<li>无意识的递归：this.toString() vs. super.toString()</li>
 </ul>
 
       
