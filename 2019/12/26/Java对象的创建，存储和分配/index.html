@@ -8,14 +8,14 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Java对象的创建，存储和分配 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="java对象的创建过程汇编码 12345newdupinvokespecialastore_1return new:申请内存，赋默认值 invokespecial:调用构造方法，赋初始值 astore：建立关联？  java对象在内存中的存储布局 存储布局  对象头markword  identity hashcode（25bit）：根据内存地址产生的hash值？  分代信息（4bit）：故，最">
+  <meta name="description" content="java对象的创建过程汇编码 12345newdupinvokespecialastore_1return new:申请内存，赋默认值 invokespecial:调用构造方法，赋初始值 astore：建立关联？">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java对象的创建，存储和分配">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;26&#x2F;Java%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA%EF%BC%8C%E5%AD%98%E5%82%A8%E5%92%8C%E5%88%86%E9%85%8D&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="java对象的创建过程汇编码 12345newdupinvokespecialastore_1return new:申请内存，赋默认值 invokespecial:调用构造方法，赋初始值 astore：建立关联？  java对象在内存中的存储布局 存储布局  对象头markword  identity hashcode（25bit）：根据内存地址产生的hash值？  分代信息（4bit）：故，最">
+<meta property="og:description" content="java对象的创建过程汇编码 12345newdupinvokespecialastore_1return new:申请内存，赋默认值 invokespecial:调用构造方法，赋初始值 astore：建立关联？">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-27T12:53:35.913Z">
+<meta property="og:updated_time" content="2019-12-27T12:56:22.436Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -174,6 +174,7 @@
 <p>new:申请内存，赋默认值</p>
 <p>invokespecial:调用构造方法，赋初始值</p>
 <p>astore：建立关联？</p>
+<a id="more"></a>
 <hr>
 <h3 id="java对象在内存中的存储布局"><a href="#java对象在内存中的存储布局" class="headerlink" title="java对象在内存中的存储布局"></a>java对象在内存中的存储布局</h3><ul>
 <li><p>存储布局</p>
@@ -309,6 +310,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/12/27/HashMap-vs-HashTable/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          HashMap vs. HashTable
+        
+      </div>
+    </a>
   
   
     <a href="/2019/12/24/%E4%BF%84%E7%BD%97%E6%96%AF%E6%96%B9%E5%9D%97%E6%B8%B8%E6%88%8F%E7%9A%84java%E5%AE%9E%E7%8E%B0/" id="article-nav-older" class="article-nav-link-wrap">

@@ -147,6 +147,138 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-计算机网络basis" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9Cbasis/">计算机网络basis</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9Cbasis/" class="archive-article-date">
+  	<time datetime="2019-12-27T14:16:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9Cbasis/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-HashMap-vs-HashTable" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/27/HashMap-vs-HashTable/">HashMap vs. HashTable</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/27/HashMap-vs-HashTable/" class="archive-article-date">
+  	<time datetime="2019-12-27T13:49:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>继承体系&amp;对外接口&amp;实现功能</p>
+<ul>
+<li>HashTable：Dictionary抽象类&amp;Cloneable接口&amp;Serializable接口&amp;Map接口</li>
+<li>HashMap：AbstractMap类&amp;Cloneable接口&amp;Serializable接口</li>
+<li>对外接口区别很小，实现功能基本相同
+        
+          <a class="article-more-a" href="/2019/12/27/HashMap-vs-HashTable/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/27/HashMap-vs-HashTable/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Java对象的创建，存储和分配" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -173,71 +305,9 @@
 <p>new:申请内存，赋默认值</p>
 <p>invokespecial:调用构造方法，赋初始值</p>
 <p>astore：建立关联？</p>
-<hr>
-<h3 id="java对象在内存中的存储布局"><a href="#java对象在内存中的存储布局" class="headerlink" title="java对象在内存中的存储布局"></a>java对象在内存中的存储布局</h3><ul>
-<li><p>存储布局</p>
-<ul>
-<li><p>对象头markword</p>
-<ul>
-<li><p>identity hashcode（25bit）：根据内存地址产生的hash值？</p>
-</li>
-<li><p>分代信息（4bit）：故，最大15</p>
-</li>
-<li><p>锁信息（3bit）：</p>
-<p>0 01：偏向锁</p>
-<p>0 00：轻量级锁</p>
-<p>0 10：该对象正在被gc线程用的标志</p>
-<p>0 11：重量级锁：申请重量级锁之前对象先转为内核态，锁的归属不由JVM决定而是取决于操作系统</p>
-<p>1 01： 非偏向锁</p>
-</li>
-</ul>
-</li>
-<li><p>类型指针 eg  Object.class</p>
-</li>
-<li><p>实例数据</p>
-</li>
-<li><p>对齐填充：取决于几bit的虚拟机 能被8或16整除这样</p>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="对象怎么定位？"><a href="#对象怎么定位？" class="headerlink" title="对象怎么定位？"></a>对象怎么定位？</h3><ul>
-<li><p>句柄访问： Object o = new object()，new object作为实例对象存放在java堆中，o作为一个本地引用存在java栈的本地变量表中。使用句柄访问方式，java堆会划分一部分内存作为句柄池，在引用中存放对象的句柄地址，句柄中包含帝乡的地址和类型数据信息。</p>
-</li>
-<li><p>直接指针访问<br>reference存放对象地址，java堆对象的布局考虑如何放置访问类型的相关信息。</p>
-</li>
-</ul>
-<p>这两种访问方式各有利弊，使用句柄访最大的好处是reference中存储着稳定的句柄地址，当对象移动之后（gc时移动对象是非常普遍的行为），只需要改变句柄中的对象实例地址即可，reference不用修改。</p>
-<p>使用指针访问的好处是访问速度快，它减少了一次指针定位的时间开销，由于java是面向对象的语言，在开发中java对象的访问非常的频繁，因此这类开销积少成多也是非常可观的，反之则提升访问速度。</p>
-<hr>
-<h3 id="对象怎么分配？"><a href="#对象怎么分配？" class="headerlink" title="对象怎么分配？"></a>对象怎么分配？</h3><ul>
-<li>Java 对象一般分配在堆上，而堆空间又是所有线程共享的</li>
-<li>堆外内存也叫直接内存。直接内存是直接向操作系统申请的内存区域，访问直接内存的速度一般会优于堆内存，大小受限。</li>
-<li>栈上分配：逃逸分析的目的是判断对象的作用域是否可能逃出方法体。</li>
-</ul>
-<p>判断依据有两个：1. 对象是否被存入堆中:一旦对象被分配在堆中，那所有线程都可以访问到该对象，这样即时编译器就追踪不到所有使用到该对象的地方了，这样的对象就属于逃逸对象 2. 对象是否被传入未知代码中:即时编译器会把方法中未被内联的方法当成未知代码，所以无法判断这个未知方法的方法调用会不会将调用者或参数放到堆中，所以认为方法的调用者和参数是逃逸的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public class escape&#123;</span><br><span class="line">    private static User u;//</span><br><span class="line">    public static void alloc(User u)&#123;//</span><br><span class="line">        u = user</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>分配在栈上的好处是方法结束后自动释放对应的内存,省掉了 jvm 进行垃圾回收，进而可以提高系统的性能.</p>
-<ul>
-<li>怎么验证对象被分配到栈上？<br>创建数量很多，占内存大于设置的堆内存的对象，应该会发生 gc，如果设置的特别小，应该会发生大量的 gc。如果gc次数不高的话可以得出大部分对象被分配到栈上的结论</li>
-</ul>
-<hr>
-<h3 id="Object-o-new-object-在内存中占用多少字节？"><a href="#Object-o-new-object-在内存中占用多少字节？" class="headerlink" title="Object o = new object()在内存中占用多少字节？"></a>Object o = new object()在内存中占用多少字节？</h3><p>对象由四部分组成：</p>
-<ol>
-<li>对象头：记录对象的实例名字和id，普通对象占用8bytes，数组占用12bytes（8bytes的普通对象头和4bytes的数组长度）</li>
-<li>基本类型：基本类型<br>boolean,byte 占用 1 byte<br>char,short 占用 2 bytes<br>int,float 占用 4 bytes<br>long,double 占用 8 bytes</li>
-<li>每个引用类型占用 4 bytes</li>
-<li>填充物：以 8 的倍数计算，不足 8 的倍数会自动补齐</li>
-</ol>
-<hr>
-<h3 id="DCL和volitale"><a href="#DCL和volitale" class="headerlink" title="DCL和volitale"></a>DCL和volitale</h3><p>单例设计模式(类下只有一个对象)的一种解决方法是DCL(double check lock).</p>
-<p>volatile的两个特性：</p>
-<ol>
-<li>透明，一个线程对数据的改变马上对里另一个线程可见</li>
-<li>禁止指令重排序。</li>
-</ol>
-
+        
+          <a class="article-more-a" href="/2019/12/26/Java%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA%EF%BC%8C%E5%AD%98%E5%82%A8%E5%92%8C%E5%88%86%E9%85%8D/#more">more >></a>
+        
       
 
       
@@ -725,155 +795,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/12/03/Notes-%E5%B0%8F%E7%81%B0%E7%9A%84%E7%AE%97%E6%B3%95%E4%B9%8B%E6%97%85/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-git-learning" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/23/git-learning/">git-learning</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/23/git-learning/" class="archive-article-date">
-  	<time datetime="2019-11-23T07:18:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>将本地已有项目关联到github新的项目</li>
-</ul>
-<ol start="0">
-<li>前期准备：ssh key &amp; git</li>
-<li>在github上新建repository，设命名为“repo”，地址为“<a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:111/repo.git”</li>
-<li>进入本地文件夹，执行初始化git init</li>
-<li>设置远程地址 git remote add + 仓库名 +仓库地址，即 git remote add repo <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:111/repo.git</li>
-<li>git push repo master</li>
-<li>git pull repo master:可以先将github的代码pull下来</li>
-<li>git push repo master</li>
-</ol>
-<ul>
-<li>将github代码clone到本地仓库<br>git clone 远程仓库地址</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/23/git-learning/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-HashTable" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/21/HashTable/">HashTable</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/21/HashTable/" class="archive-article-date">
-  	<time datetime="2019-11-21T12:22:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="哈希表的原理及其相关算法"><a href="#哈希表的原理及其相关算法" class="headerlink" title="哈希表的原理及其相关算法"></a>哈希表的原理及其相关算法</h2><p>哈希表把任意长度的输入通过一种类似压缩映射的数学函数变换成固定长度的输出，并存储在一个有限的地址空间里。<br>哈希映射可表示为 key=f(value),构建哈希表需要考虑冗余度和复杂度。</p>
-<p>利用哈希表实现查找的步骤为：</p>
-<ul>
-<li>用给定的哈希函数f将待存数组value构造哈希表，尽量做到key尽可能分散，映射复杂度低。常见的有五种：直接定址key=value+c；除法取余key=value%c；数学分析；平方取中；折叠value=125860,key=12+58+60=130取key=30.</li>
-<li>选择冲突处理方法解决地址冲突，可选开放地址法（向后查找）和链式地址法（“链表的数组”）</li>
-<li>在哈希表的基础上执行哈希查找</li>
-</ul>
-<p>实现哈希映射为“除法取余法”，冲突为“开放地址线性探测法”，代码如下</p>
-        
-          <a class="article-more-a" href="/2019/11/21/HashTable/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/21/HashTable/">展开全文 >></a>
         </p>
       
 

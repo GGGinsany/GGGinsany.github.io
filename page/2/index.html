@@ -147,6 +147,155 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-git-learning" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/23/git-learning/">git-learning</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/23/git-learning/" class="archive-article-date">
+  	<time datetime="2019-11-23T07:18:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>将本地已有项目关联到github新的项目</li>
+</ul>
+<ol start="0">
+<li>前期准备：ssh key &amp; git</li>
+<li>在github上新建repository，设命名为“repo”，地址为“<a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:111/repo.git”</li>
+<li>进入本地文件夹，执行初始化git init</li>
+<li>设置远程地址 git remote add + 仓库名 +仓库地址，即 git remote add repo <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:111/repo.git</li>
+<li>git push repo master</li>
+<li>git pull repo master:可以先将github的代码pull下来</li>
+<li>git push repo master</li>
+</ol>
+<ul>
+<li>将github代码clone到本地仓库<br>git clone 远程仓库地址</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/23/git-learning/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-HashTable" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/21/HashTable/">HashTable</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/21/HashTable/" class="archive-article-date">
+  	<time datetime="2019-11-21T12:22:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="哈希表的原理及其相关算法"><a href="#哈希表的原理及其相关算法" class="headerlink" title="哈希表的原理及其相关算法"></a>哈希表的原理及其相关算法</h2><p>哈希表把任意长度的输入通过一种类似压缩映射的数学函数变换成固定长度的输出，并存储在一个有限的地址空间里。<br>哈希映射可表示为 key=f(value),构建哈希表需要考虑冗余度和复杂度。</p>
+<p>利用哈希表实现查找的步骤为：</p>
+<ul>
+<li>用给定的哈希函数f将待存数组value构造哈希表，尽量做到key尽可能分散，映射复杂度低。常见的有五种：直接定址key=value+c；除法取余key=value%c；数学分析；平方取中；折叠value=125860,key=12+58+60=130取key=30.</li>
+<li>选择冲突处理方法解决地址冲突，可选开放地址法（向后查找）和链式地址法（“链表的数组”）</li>
+<li>在哈希表的基础上执行哈希查找</li>
+</ul>
+<p>实现哈希映射为“除法取余法”，冲突为“开放地址线性探测法”，代码如下</p>
+        
+          <a class="article-more-a" href="/2019/11/21/HashTable/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/21/HashTable/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JavaLearningNote-Thinking-in-java" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
