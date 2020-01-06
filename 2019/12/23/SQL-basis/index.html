@@ -8,12 +8,14 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>SQL basis | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="创建数据库： CREATE SCHEMA mygamedb DEFAULT CHARACTER SET utf8 ;   creat database chednan_test&#x2F;creat schema chendan_test; difference? use chendan_test;">
+<meta property="og:type" content="article">
 <meta property="og:title" content="SQL basis">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;23&#x2F;SQL-basis&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="创建数据库： CREATE SCHEMA mygamedb DEFAULT CHARACTER SET utf8 ;   creat database chednan_test&#x2F;creat schema chendan_test; difference? use chendan_test;">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-23T05:06:07.438Z">
+<meta property="og:updated_time" content="2020-01-06T01:48:47.510Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -166,7 +168,85 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <ol>
+<li>创建数据库： CREATE SCHEMA <code>mygamedb</code> DEFAULT CHARACTER SET utf8 ;</li>
+</ol>
+<ul>
+<li>creat database chednan_test/creat schema chendan_test; difference?</li>
+<li>use chendan_test;<a id="more"></a></li>
+</ul>
+<ol start="2">
+<li><p>创建表：指定各列的名称和数据要求，最后指定primary key</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">create table mytable(id int auto_increment,username varchar(10),password varchar(30),primary key(id));</span><br><span class="line">create table mytable2 like mytable;//利用旧表创建新表</span><br><span class="line">create table mytable3 as select id,username from mytable definition only;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>增： insert into mytable(username,password) values(‘chendan’,’123’);</p>
+</li>
+</ol>
+<p>增加一个列：alter table mytable add colomn sex varchar(10);</p>
+<ol start="4">
+<li>删条目： delete from users where id=1;</li>
+</ol>
+<p>删数据库： drop database chendan_test;drop table tablename;</p>
+<ol start="5">
+<li><p>改： update mytable set username=’cathy’ where id=1;</p>
+</li>
+<li><p>查： 查找条件的添加和组合：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">select * from mytable;</span><br><span class="line">select * from mytable limit 10;//只显示10个</span><br><span class="line">select * from mytable limit 10,10;//从第11个开始，只显示10个</span><br><span class="line">select * from mytable order by id;</span><br><span class="line">select * from mytable order by id desc;</span><br><span class="line">select distinct username from mytable;//不显示重复项</span><br><span class="line">select username form mytable where id&gt;6;</span><br><span class="line">select data_format(payment_date,&apos;%y/%m/%d&apos;) from mytable limit 20;</span><br></pre></td></tr></table></figure></li>
+<li><p>select的常量和函数应用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select now();</span><br><span class="line">select curtime();</span><br><span class="line">select sqrt(23);</span><br><span class="line">select concat(first_name,last_name) from actor;</span><br><span class="line">select sum(id) as sumvalue from mytable;// min(),max(),avg();</span><br></pre></td></tr></table></figure></li>
+<li><p>union:组合两个结果表并消去表中任何重复行而派生一个结果表，union all时，不消除重复行。</p>
+</li>
+</ol>
+<p>except：包括所有在 TABLE1 中但不在 TABLE2 中的行并消除所有重复行而派生出一个结果表。except all时，不消除重复行。</p>
+<p>intersect： TABLE1 和 TABLE2 中都有的行并消除所有重复行而派生出一个结果表。intersect all时，不消除重复行。</p>
+<hr>
+<ol start="9">
+<li><p>primary key vs unique key: </p>
+</li>
+<li><p>使用外连接：left(outer) join; right(outer) join; full/cross (outer) join;</p>
+</li>
+<li><p>外建关联</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE `mygamedb`.`role` </span><br><span class="line">ADD INDEX `fk-userid_idx` (`user_id` ASC);</span><br><span class="line">ALTER TABLE `mygamedb`.`role` </span><br><span class="line">ADD CONSTRAINT `fk-userid`</span><br><span class="line">  FOREIGN KEY (`user_id`)</span><br><span class="line">  REFERENCES `mygamedb`.`users` (`id`)</span><br><span class="line">  ON DELETE NO ACTION</span><br><span class="line">  ON UPDATE NO ACTION;</span><br></pre></td></tr></table></figure></li>
+<li><p>group by:</p>
+</li>
+</ol>
+<hr>
+<ul>
+<li><p>提升：</p>
+<ol>
+<li>left join:是以左表为准，左表中的记录都会出现在查询结果中，如果右表没有相匹配的记录，则以 null填充</li>
+<li>right join：是以右表为准，右表中的记录都会出现在查询结果中，如果左表没有相匹配的记录，则以 null填充</li>
+<li>inner join：两张表地位是平等的，符合联接条件的记录才会出现在查询结果中</li>
+</ol>
+</li>
+</ul>
+<hr>
+<p>常见命令</p>
+<ol>
+<li>创建数据库</li>
+<li>创建表</li>
+<li>查看表结构</li>
+<li>插入数据</li>
+<li>数据查询</li>
+</ol>
+<hr>
+<ul>
+<li>对数据库进行操作：</li>
+</ul>
+<ol>
+<li>备份和恢复：</li>
+</ol>
+<p>workbench：数据导出</p>
+<p>Data import/export;</p>
+<ol start="2">
+<li><p>分离数据库：sp_detach_db;　　附加数据库：sp_attach_db　　后接表名，附加需要完整的路径名</p>
+</li>
+<li><p>压缩数据库：dbcc shrink database myganmedb;</p>
+</li>
+</ol>
+<p>面试题：<a href="https://zhuanlan.zhihu.com/p/43289968" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/43289968</a></p>
+<p>面试题：<a href="https://zhuanlan.zhihu.com/p/38354000?utm_source=wechat_session&amp;utm_medium=social&amp;utm_oi=576122802407477248" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/38354000?utm_source=wechat_session&amp;utm_medium=social&amp;utm_oi=576122802407477248</a></p>
+
       
 
       
@@ -292,7 +372,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Cathy Chen
+    		&copy; 2020 Cathy Chen
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
