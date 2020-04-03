@@ -6,16 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>腾讯暑期实习迷惑面经 | Hexo</title>
+  <title>HashMap vs. HashTable | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这个经历写出来完全出于强迫症和泄愤。面试过程中被问了三次是否考虑去深圳，在得到否定的答复后，整个流程变得异常的赶。每个问题只给我两分钟的考虑时间，答不出来也不给提示，直接问下一个。好几次都是他问了下一个问题，我才很尬的说呵呵呵呵呵呵我先说下上个问题的答案balabala。总之，把问到的问题记录下。">
+  <meta name="description" content="继承体系&amp;amp;对外接口&amp;amp;实现功能  HashTable：Dictionary抽象类&amp;amp;Cloneable接口&amp;amp;Serializable接口&amp;amp;Map接口 HashMap：AbstractMap类&amp;amp;Cloneable接口&amp;amp;Serializable接口 对外接口区别很小，实现功能基本相同">
 <meta property="og:type" content="article">
-<meta property="og:title" content="腾讯暑期实习迷惑面经">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;04&#x2F;03&#x2F;%E8%85%BE%E8%AE%AF%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0%E8%BF%B7%E6%83%91%E9%9D%A2%E7%BB%8F&#x2F;index.html">
+<meta property="og:title" content="HashMap vs. HashTable">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;27&#x2F;HashMap-vs-HashTable&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="这个经历写出来完全出于强迫症和泄愤。面试过程中被问了三次是否考虑去深圳，在得到否定的答复后，整个流程变得异常的赶。每个问题只给我两分钟的考虑时间，答不出来也不给提示，直接问下一个。好几次都是他问了下一个问题，我才很尬的说呵呵呵呵呵呵我先说下上个问题的答案balabala。总之，把问到的问题记录下。">
+<meta property="og:description" content="继承体系&amp;amp;对外接口&amp;amp;实现功能  HashTable：Dictionary抽象类&amp;amp;Cloneable接口&amp;amp;Serializable接口&amp;amp;Map接口 HashMap：AbstractMap类&amp;amp;Cloneable接口&amp;amp;Serializable接口 对外接口区别很小，实现功能基本相同">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-04-03T09:43:07.643Z">
+<meta property="og:updated_time" content="2019-12-27T14:09:44.000Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -148,49 +148,48 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-腾讯暑期实习迷惑面经" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-HashMap-vs-HashTable" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      腾讯暑期实习迷惑面经
+      HashMap vs. HashTable
     </h1>
   
 
         
-        <a href="/2020/04/03/%E8%85%BE%E8%AE%AF%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0%E8%BF%B7%E6%83%91%E9%9D%A2%E7%BB%8F/" class="archive-article-date">
-  	<time datetime="2020-04-03T09:26:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
+        <a href="/2019/12/27/HashMap-vs-HashTable/" class="archive-article-date">
+  	<time datetime="2019-12-27T13:49:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>这个经历写出来完全出于强迫症和泄愤。面试过程中被问了三次是否考虑去深圳，在得到否定的答复后，整个流程变得异常的赶。每个问题只给我两分钟的考虑时间，答不出来也不给提示，直接问下一个。好几次都是他问了下一个问题，我才很尬的说呵呵呵呵呵呵我先说下上个问题的答案balabala。总之，把问到的问题记录下。</p>
-<a id="more"></a>
-<h4 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h4><p>哎这个不多说了</p>
-<h4 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h4><ul>
-<li>链表反转</li>
-<li>抢红包算法的实现</li>
-<li>用两个栈实现队列</li>
-<li>矩阵翻转</li>
+        <ol>
+<li><p>继承体系&amp;对外接口&amp;实现功能</p>
+<ul>
+<li>HashTable：Dictionary抽象类&amp;Cloneable接口&amp;Serializable接口&amp;Map接口</li>
+<li>HashMap：AbstractMap类&amp;Cloneable接口&amp;Serializable接口</li>
+<li>对外接口区别很小，实现功能基本相同<a id="more"></a></li>
 </ul>
-<h4 id="测试相关"><a href="#测试相关" class="headerlink" title="测试相关"></a>测试相关</h4><ul>
-<li>输入栏和提交接口的测试方案</li>
-<li>登录接口的测试：我他妈的发现腾讯就是他妈的很喜欢问登录接口怎么测试</li>
-<li>性能测试相关</li>
-</ul>
-<h4 id="java"><a href="#java" class="headerlink" title="java"></a>java</h4><ul>
-<li>线程和进程的区别</li>
-<li>对象头包括什么</li>
-<li>堆栈的区别</li>
-<li>垃圾回收算法</li>
-<li>单例模式的设计</li>
-<li>单例模式和static的联系和区别：纵观我整个面试我只有这个题没说出来，呵呵额呵呵呵呵呵</li>
-</ul>
-<p>面试完我去官网看状态，一秒变灰，我尼玛</p>
+</li>
+<li><p>NullKey&amp;NullValue</p>
+<p> HashMap中对null值和nullvalue做了特殊处理，将null值的hashcode定为0，从而将其存放在哈希表的第0个bucket中。HashTable会返回一个NullPointerException</p>
+</li>
+<li><p>实现原理&amp;数据结构&amp;算法</p>
+<p> 都使用哈希表来存储键值对，数据结构基本相同。都创建一个继承自Map.Entry，是存储在哈希表的一个键值对。</p>
+<p> 初始容量大小和容量扩充的算法：HashTable默认的初始大小为11，之后每次扩充为原来的2n+1。HashMap默认的初始化大小为16，之后每次扩充为原来的2倍。HashTable会尽量使用素数、奇数。而HashMap则总是使用2的幂作为哈希表的大小。我们知道当哈希表的大小为素数时，简单的取模哈希的结果会更加均匀（具体证明，见这篇文章），所以单从这一点上看，HashTable的哈希表大小选择，似乎更高明些。但另一方面我们又知道，在取模计算时，如果模数是2的幂，那么我们可以直接使用位运算来得到结果，效率要大大高于做除法。所以从hash计算的效率上，又是HashMap更胜一筹。</p>
+</li>
+<li><p>线程安全</p>
+<p> HashTable是同步的，HashMap不是，也就是说HashTable在多线程使用的情况下，不需要做额外的同步，而HashMap则不行。sync关键字</p>
+<p> 如果你不需要线程安全，那么使用HashMap，如果需要线程安全，那么使用ConcurrentHashMap。HashTable已经被淘汰了，不要在新的代码中再使用它。</p>
+</li>
+<li><p>HashTable已经被淘汰了，不要在代码中再使用它</p>
+</li>
+</ol>
 
       
 
@@ -249,7 +248,7 @@
     <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/03/%E8%85%BE%E8%AE%AF%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0%E8%BF%B7%E6%83%91%E9%9D%A2%E7%BB%8F/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/27/HashMap-vs-HashTable/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -263,9 +262,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2019/12/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9Cbasis/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          计算机网络basis
+        
+      </div>
+    </a>
   
-    <a href="/2020/04/03/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%9F%BA%E7%A1%80%E7%AF%87-rabbitMQ-kafka/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">消息中间件基础篇-rabbitMQ&amp;kafka</div>
+  
+    <a href="/2019/12/26/Java%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA%EF%BC%8C%E5%AD%98%E5%82%A8%E5%92%8C%E5%88%86%E9%85%8D/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java对象的创建，存储和分配</div>
       <i class="icon-circle-right"></i>
     </a>
   

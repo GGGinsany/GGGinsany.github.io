@@ -6,16 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>腾讯暑期实习迷惑面经 | Hexo</title>
+  <title>Java内存泄露 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这个经历写出来完全出于强迫症和泄愤。面试过程中被问了三次是否考虑去深圳，在得到否定的答复后，整个流程变得异常的赶。每个问题只给我两分钟的考虑时间，答不出来也不给提示，直接问下一个。好几次都是他问了下一个问题，我才很尬的说呵呵呵呵呵呵我先说下上个问题的答案balabala。总之，把问到的问题记录下。">
+  <meta name="description" content="总的来说，内存泄漏问题由编码不认真导致，并不能责怪JVM没有更合理的清理。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="腾讯暑期实习迷惑面经">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;04&#x2F;03&#x2F;%E8%85%BE%E8%AE%AF%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0%E8%BF%B7%E6%83%91%E9%9D%A2%E7%BB%8F&#x2F;index.html">
+<meta property="og:title" content="Java内存泄露">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;30&#x2F;Java%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="这个经历写出来完全出于强迫症和泄愤。面试过程中被问了三次是否考虑去深圳，在得到否定的答复后，整个流程变得异常的赶。每个问题只给我两分钟的考虑时间，答不出来也不给提示，直接问下一个。好几次都是他问了下一个问题，我才很尬的说呵呵呵呵呵呵我先说下上个问题的答案balabala。总之，把问到的问题记录下。">
+<meta property="og:description" content="总的来说，内存泄漏问题由编码不认真导致，并不能责怪JVM没有更合理的清理。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-04-03T09:43:07.643Z">
+<meta property="og:updated_time" content="2019-12-30T13:37:59.000Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -148,49 +148,45 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-腾讯暑期实习迷惑面经" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Java内存泄露" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      腾讯暑期实习迷惑面经
+      Java内存泄露
     </h1>
   
 
         
-        <a href="/2020/04/03/%E8%85%BE%E8%AE%AF%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0%E8%BF%B7%E6%83%91%E9%9D%A2%E7%BB%8F/" class="archive-article-date">
-  	<time datetime="2020-04-03T09:26:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
+        <a href="/2019/12/30/Java%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2/" class="archive-article-date">
+  	<time datetime="2019-12-30T06:33:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-30</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>这个经历写出来完全出于强迫症和泄愤。面试过程中被问了三次是否考虑去深圳，在得到否定的答复后，整个流程变得异常的赶。每个问题只给我两分钟的考虑时间，答不出来也不给提示，直接问下一个。好几次都是他问了下一个问题，我才很尬的说呵呵呵呵呵呵我先说下上个问题的答案balabala。总之，把问到的问题记录下。</p>
+        <p>总的来说，内存泄漏问题由编码不认真导致，并不能责怪JVM没有更合理的清理。</p>
 <a id="more"></a>
-<h4 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h4><p>哎这个不多说了</p>
-<h4 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h4><ul>
-<li>链表反转</li>
-<li>抢红包算法的实现</li>
-<li>用两个栈实现队列</li>
-<li>矩阵翻转</li>
+
+<p>java判断对象是否可以回收利用的方式是可达性算法。这个算法的基本思路就是通过一系列名为”GC Roots”的对象作为起始点，从这些节点开始向下搜索，搜索所走过的路径称为引用链(Reference Chain)，当一个对象到GC Roots没有任何引用链相连时，则证明此对象是不可用的，将会被判定为是可回收对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public class Simple&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Object a = new Object();</span><br><span class="line">        Object b = new Object();</span><br><span class="line">        b=a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>a为可达对象，b为不可达对象，显然b可以被清理掉，释放内存。该步骤是由GC决定并执行的，GC会监控每一个对象的状态，包括申请，引用赋值等。释放对象的根本原则就是对象不会被引用。</p>
+<ul>
+<li>给对象赋值null后，之后再也没有调用过</li>
+<li>给对象赋予了新值，重新分配内存空间</li>
 </ul>
-<h4 id="测试相关"><a href="#测试相关" class="headerlink" title="测试相关"></a>测试相关</h4><ul>
-<li>输入栏和提交接口的测试方案</li>
-<li>登录接口的测试：我他妈的发现腾讯就是他妈的很喜欢问登录接口怎么测试</li>
-<li>性能测试相关</li>
-</ul>
-<h4 id="java"><a href="#java" class="headerlink" title="java"></a>java</h4><ul>
-<li>线程和进程的区别</li>
-<li>对象头包括什么</li>
-<li>堆栈的区别</li>
-<li>垃圾回收算法</li>
-<li>单例模式的设计</li>
-<li>单例模式和static的联系和区别：纵观我整个面试我只有这个题没说出来，呵呵额呵呵呵呵呵</li>
-</ul>
-<p>面试完我去官网看状态，一秒变灰，我尼玛</p>
+<p>内存泄漏：不再会被使用的对象的内存不会被回收。</p>
+<ol>
+<li>长的生命周期的对象持有短生命周期的引用<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class Simple&#123;</span><br><span class="line">    Object object;</span><br><span class="line">    public void method1()&#123;</span><br><span class="line">        object = new Obeject();</span><br><span class="line">        //other code</span><br><span class="line">        //object = null;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+object只用于method1方法，但是当method1方法执行完成后，object所分配的内存不会马上被释放，而是当Simple类的对象被释放后才会释放。改正方法如上。在内存对象明明已经不需要的时候，还仍然保留着这块内存和它的访问方式（引用），这是所有语言都有可能会出现的内存泄漏方式。编程时如果不小心，我们很容易发生这种情况，如果不太严重，可能就只是短暂的内存泄露。</li>
+</ol>
+<p>解决原则：尽量减小对象的作用域。</p>
+<ol start="2">
+<li>单例模式导致的内存泄露：单例模式，很多时候我们可以把它的生命周期与整个程序的生命周期看做差不多的，所以是一个长生命周期的对象。如果这个对象持有其他对象的引用，也很容易发生内存泄露</li>
+</ol>
 
       
 
@@ -249,7 +245,7 @@
     <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/03/%E8%85%BE%E8%AE%AF%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0%E8%BF%B7%E6%83%91%E9%9D%A2%E7%BB%8F/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/30/Java%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -263,9 +259,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2020/01/06/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8%E6%B5%8B%E8%AF%95%E4%B8%8A%E6%B5%B7%E4%BA%8C%E9%9D%A2%E4%B8%89%E9%9D%A2%E7%BB%8F%E5%8E%86/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          字节跳动测试上海二面三面经历
+        
+      </div>
+    </a>
   
-    <a href="/2020/04/03/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%9F%BA%E7%A1%80%E7%AF%87-rabbitMQ-kafka/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">消息中间件基础篇-rabbitMQ&amp;kafka</div>
+  
+    <a href="/2019/12/30/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8%E4%BC%81%E4%B8%9A%E5%BC%80%E5%8F%91%E6%B5%8B%E8%AF%95%E5%AE%9E%E4%B9%A0%E7%94%9F%E9%9D%A2%E8%AF%95%E7%BB%8F%E9%AA%8C-QAQ/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">字节跳动企业开发测试实习生面试经验-QAQ</div>
       <i class="icon-circle-right"></i>
     </a>
   

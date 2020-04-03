@@ -6,16 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>腾讯暑期实习迷惑面经 | Hexo</title>
+  <title>二分查找 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这个经历写出来完全出于强迫症和泄愤。面试过程中被问了三次是否考虑去深圳，在得到否定的答复后，整个流程变得异常的赶。每个问题只给我两分钟的考虑时间，答不出来也不给提示，直接问下一个。好几次都是他问了下一个问题，我才很尬的说呵呵呵呵呵呵我先说下上个问题的答案balabala。总之，把问到的问题记录下。">
+  <meta name="description" content="本文介绍在有序数组中查找目标数值的思想以及模式。 传统二分查找的问题 中位数的计算123int mid = (left+right)&#x2F;2;int mid = left + (right-left)&#x2F;2;int mid = (left+right)&amp;gt;&amp;gt;&amp;gt;1; 1在left和right都比较大的情况下很有可能超过Integer.MAX_VALUE即整型溢出；2在left为负数的时候也">
 <meta property="og:type" content="article">
-<meta property="og:title" content="腾讯暑期实习迷惑面经">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;04&#x2F;03&#x2F;%E8%85%BE%E8%AE%AF%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0%E8%BF%B7%E6%83%91%E9%9D%A2%E7%BB%8F&#x2F;index.html">
+<meta property="og:title" content="二分查找">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;23&#x2F;%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="这个经历写出来完全出于强迫症和泄愤。面试过程中被问了三次是否考虑去深圳，在得到否定的答复后，整个流程变得异常的赶。每个问题只给我两分钟的考虑时间，答不出来也不给提示，直接问下一个。好几次都是他问了下一个问题，我才很尬的说呵呵呵呵呵呵我先说下上个问题的答案balabala。总之，把问到的问题记录下。">
+<meta property="og:description" content="本文介绍在有序数组中查找目标数值的思想以及模式。 传统二分查找的问题 中位数的计算123int mid = (left+right)&#x2F;2;int mid = left + (right-left)&#x2F;2;int mid = (left+right)&amp;gt;&amp;gt;&amp;gt;1; 1在left和right都比较大的情况下很有可能超过Integer.MAX_VALUE即整型溢出；2在left为负数的时候也">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-04-03T09:43:07.643Z">
+<meta property="og:updated_time" content="2019-12-24T03:13:50.000Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -148,49 +148,44 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-腾讯暑期实习迷惑面经" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-二分查找" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      腾讯暑期实习迷惑面经
+      二分查找
     </h1>
   
 
         
-        <a href="/2020/04/03/%E8%85%BE%E8%AE%AF%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0%E8%BF%B7%E6%83%91%E9%9D%A2%E7%BB%8F/" class="archive-article-date">
-  	<time datetime="2020-04-03T09:26:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
+        <a href="/2019/12/23/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" class="archive-article-date">
+  	<time datetime="2019-12-23T05:54:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>这个经历写出来完全出于强迫症和泄愤。面试过程中被问了三次是否考虑去深圳，在得到否定的答复后，整个流程变得异常的赶。每个问题只给我两分钟的考虑时间，答不出来也不给提示，直接问下一个。好几次都是他问了下一个问题，我才很尬的说呵呵呵呵呵呵我先说下上个问题的答案balabala。总之，把问到的问题记录下。</p>
-<a id="more"></a>
-<h4 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h4><p>哎这个不多说了</p>
-<h4 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h4><ul>
-<li>链表反转</li>
-<li>抢红包算法的实现</li>
-<li>用两个栈实现队列</li>
-<li>矩阵翻转</li>
+        <p>本文介绍在有序数组中查找目标数值的思想以及模式。</p>
+<h3 id="传统二分查找的问题"><a href="#传统二分查找的问题" class="headerlink" title="传统二分查找的问题"></a>传统二分查找的问题</h3><ul>
+<li>中位数的计算<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int mid = (left+right)/2;</span><br><span class="line">int mid = left + (right-left)/2;</span><br><span class="line">int mid = (left+right)&gt;&gt;&gt;1;</span><br></pre></td></tr></table></figure>
+1在left和right都比较大的情况下很有可能超过Integer.MAX_VALUE即整型溢出；2在left为负数的时候也有溢出的可能性；3使用左边界索引+右边界索引然后无符号右移一位是推荐的写法。</li>
 </ul>
-<h4 id="测试相关"><a href="#测试相关" class="headerlink" title="测试相关"></a>测试相关</h4><ul>
-<li>输入栏和提交接口的测试方案</li>
-<li>登录接口的测试：我他妈的发现腾讯就是他妈的很喜欢问登录接口怎么测试</li>
-<li>性能测试相关</li>
+<p>在发生整型溢出以后，会变成负数，此时如果除以2 ，mid 是一个负数，但是经过无符号右移，可以得到在不溢出的情况下正确的结果. (&gt;&gt;&gt;弃右边指定位数，左边补上 0)。对于正数来说两者一样，负数通过&gt;&gt;&gt;变成正数。</p>
+<ul>
+<li>循环条件和退出时的返回值 left or right<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public class Solution&#123;</span><br><span class="line">    public int SearchInsert(int[] nums, int target)&#123;</span><br><span class="line">        int len = num.length;</span><br><span class="line">        if(num[len-1]&lt;target&gt;) return len;</span><br><span class="line">        int left=0;</span><br><span class="line">        int right=len-1;</span><br><span class="line">        while(left&lt;=right&gt;)&#123;</span><br><span class="line">            int mid=(left+right)&gt;&gt;&gt;1;</span><br><span class="line">            if(nums[mid]==target)return mid;</span><br><span class="line">            if(nums[mid]&lt;target&gt;)&#123;</span><br><span class="line">                left = mid+1;</span><br><span class="line">            &#125; else&#123;</span><br><span class="line">                right=mid-1;</span><br><span class="line">            &#125;</span><br><span class="line">           </span><br><span class="line">        &#125;</span><br><span class="line">        return left;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+why return left??<h3 id="新模板"><a href="#新模板" class="headerlink" title="新模板"></a>新模板</h3>将条件判断语句变为while(left&lt;right)，退出循环的时候一定有left==right成立。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">public int searchInsert(int[] nums, int target) &#123;</span><br><span class="line">        int len = nums.length;</span><br><span class="line">        if (len == 0) &#123;</span><br><span class="line">            return -1;</span><br><span class="line">        &#125;</span><br><span class="line">        if (nums[len - 1] &lt; target) &#123;</span><br><span class="line">            return len;</span><br><span class="line">        &#125;</span><br><span class="line">        int left = 0;</span><br><span class="line">        int right = len - 1;</span><br><span class="line">        while (left &lt; right) &#123;</span><br><span class="line">            int mid = left + (right - left) / 2;</span><br><span class="line">            if (nums[mid] &lt; target) &#123;</span><br><span class="line">                // nums[mid] 的值可以舍弃</span><br><span class="line">                left = mid + 1;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                // nums[mid] 不能舍弃</span><br><span class="line">                right = mid;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return right;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int[] nums = &#123;1, 2, 3, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6&#125;;</span><br><span class="line">        int target = 4;</span><br><span class="line">        Solution2 solution2 = new Solution2();</span><br><span class="line">        int searchInsert = solution2.searchInsert(nums, target);</span><br><span class="line">        System.out.println(searchInsert);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="调试方法"><a href="#调试方法" class="headerlink" title="调试方法"></a>调试方法</h3></li>
+<li>左右边界，如果左右边界不包括目标数值会导致错误结果；</li>
+<li>中位数的调整：<ul>
+<li>当数组的元素个数是偶数时，有左中位数和右中位数之分。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mid1 = left + (right - left) // 2 = 3 + (4 - 3) // 2 = 3 + 0 = 3</span><br><span class="line">mid2 = left + (right-left +1)//2 = 3+(4-3+1)//2 = 4;</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h4 id="java"><a href="#java" class="headerlink" title="java"></a>java</h4><ul>
-<li>线程和进程的区别</li>
-<li>对象头包括什么</li>
-<li>堆栈的区别</li>
-<li>垃圾回收算法</li>
-<li>单例模式的设计</li>
-<li>单例模式和static的联系和区别：纵观我整个面试我只有这个题没说出来，呵呵额呵呵呵呵呵</li>
+</li>
+<li><h3 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public int SearchInsert(int[] nums,int target)&#123;</span><br><span class="line">    //special occasions</span><br><span class="line">    pass;</span><br><span class="line">    //</span><br><span class="line">    left=</span><br><span class="line">    righ=</span><br><span class="line">    while(left&lt;right)&#123;</span><br><span class="line">        mid=(left+right)&lt;&lt;&lt;1;</span><br><span class="line">        if check(mid)&#123;</span><br><span class="line">            left=mid+1;</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            rifht=mid;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;return left;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
-<p>面试完我去官网看状态，一秒变灰，我尼玛</p>
 
       
 
@@ -249,7 +244,7 @@
     <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/03/%E8%85%BE%E8%AE%AF%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0%E8%BF%B7%E6%83%91%E9%9D%A2%E7%BB%8F/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/23/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -263,9 +258,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2019/12/24/%E4%BF%84%E7%BD%97%E6%96%AF%E6%96%B9%E5%9D%97%E6%B8%B8%E6%88%8F%E7%9A%84java%E5%AE%9E%E7%8E%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          俄罗斯方块游戏的java实现
+        
+      </div>
+    </a>
   
-    <a href="/2020/04/03/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%9F%BA%E7%A1%80%E7%AF%87-rabbitMQ-kafka/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">消息中间件基础篇-rabbitMQ&amp;kafka</div>
+  
+    <a href="/2019/12/23/SQL-basis/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SQL basis</div>
       <i class="icon-circle-right"></i>
     </a>
   

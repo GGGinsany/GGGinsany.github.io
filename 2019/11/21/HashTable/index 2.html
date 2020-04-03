@@ -6,16 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>腾讯暑期实习迷惑面经 | Hexo</title>
+  <title>HashTable | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这个经历写出来完全出于强迫症和泄愤。面试过程中被问了三次是否考虑去深圳，在得到否定的答复后，整个流程变得异常的赶。每个问题只给我两分钟的考虑时间，答不出来也不给提示，直接问下一个。好几次都是他问了下一个问题，我才很尬的说呵呵呵呵呵呵我先说下上个问题的答案balabala。总之，把问到的问题记录下。">
+  <meta name="description" content="哈希表的原理及其相关算法哈希表把任意长度的输入通过一种类似压缩映射的数学函数变换成固定长度的输出，并存储在一个有限的地址空间里。哈希映射可表示为 key=f(value),构建哈希表需要考虑冗余度和复杂度。 利用哈希表实现查找的步骤为：  用给定的哈希函数f将待存数组value构造哈希表，尽量做到key尽可能分散，映射复杂度低。常见的有五种：直接定址key=value+c；除法取余key=valu">
 <meta property="og:type" content="article">
-<meta property="og:title" content="腾讯暑期实习迷惑面经">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;04&#x2F;03&#x2F;%E8%85%BE%E8%AE%AF%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0%E8%BF%B7%E6%83%91%E9%9D%A2%E7%BB%8F&#x2F;index.html">
+<meta property="og:title" content="HashTable">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;21&#x2F;HashTable&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="这个经历写出来完全出于强迫症和泄愤。面试过程中被问了三次是否考虑去深圳，在得到否定的答复后，整个流程变得异常的赶。每个问题只给我两分钟的考虑时间，答不出来也不给提示，直接问下一个。好几次都是他问了下一个问题，我才很尬的说呵呵呵呵呵呵我先说下上个问题的答案balabala。总之，把问到的问题记录下。">
+<meta property="og:description" content="哈希表的原理及其相关算法哈希表把任意长度的输入通过一种类似压缩映射的数学函数变换成固定长度的输出，并存储在一个有限的地址空间里。哈希映射可表示为 key=f(value),构建哈希表需要考虑冗余度和复杂度。 利用哈希表实现查找的步骤为：  用给定的哈希函数f将待存数组value构造哈希表，尽量做到key尽可能分散，映射复杂度低。常见的有五种：直接定址key=value+c；除法取余key=valu">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-04-03T09:43:07.643Z">
+<meta property="og:updated_time" content="2019-12-04T14:34:35.000Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -148,50 +148,38 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-腾讯暑期实习迷惑面经" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-HashTable" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      腾讯暑期实习迷惑面经
+      HashTable
     </h1>
   
 
         
-        <a href="/2020/04/03/%E8%85%BE%E8%AE%AF%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0%E8%BF%B7%E6%83%91%E9%9D%A2%E7%BB%8F/" class="archive-article-date">
-  	<time datetime="2020-04-03T09:26:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
+        <a href="/2019/11/21/HashTable/" class="archive-article-date">
+  	<time datetime="2019-11-21T12:22:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>这个经历写出来完全出于强迫症和泄愤。面试过程中被问了三次是否考虑去深圳，在得到否定的答复后，整个流程变得异常的赶。每个问题只给我两分钟的考虑时间，答不出来也不给提示，直接问下一个。好几次都是他问了下一个问题，我才很尬的说呵呵呵呵呵呵我先说下上个问题的答案balabala。总之，把问到的问题记录下。</p>
+        <h2 id="哈希表的原理及其相关算法"><a href="#哈希表的原理及其相关算法" class="headerlink" title="哈希表的原理及其相关算法"></a>哈希表的原理及其相关算法</h2><p>哈希表把任意长度的输入通过一种类似压缩映射的数学函数变换成固定长度的输出，并存储在一个有限的地址空间里。<br>哈希映射可表示为 key=f(value),构建哈希表需要考虑冗余度和复杂度。</p>
+<p>利用哈希表实现查找的步骤为：</p>
+<ul>
+<li>用给定的哈希函数f将待存数组value构造哈希表，尽量做到key尽可能分散，映射复杂度低。常见的有五种：直接定址key=value+c；除法取余key=value%c；数学分析；平方取中；折叠value=125860,key=12+58+60=130取key=30.</li>
+<li>选择冲突处理方法解决地址冲突，可选开放地址法（向后查找）和链式地址法（“链表的数组”）</li>
+<li>在哈希表的基础上执行哈希查找</li>
+</ul>
+<p>实现哈希映射为“除法取余法”，冲突为“开放地址线性探测法”，代码如下</p>
 <a id="more"></a>
-<h4 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h4><p>哎这个不多说了</p>
-<h4 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h4><ul>
-<li>链表反转</li>
-<li>抢红包算法的实现</li>
-<li>用两个栈实现队列</li>
-<li>矩阵翻转</li>
-</ul>
-<h4 id="测试相关"><a href="#测试相关" class="headerlink" title="测试相关"></a>测试相关</h4><ul>
-<li>输入栏和提交接口的测试方案</li>
-<li>登录接口的测试：我他妈的发现腾讯就是他妈的很喜欢问登录接口怎么测试</li>
-<li>性能测试相关</li>
-</ul>
-<h4 id="java"><a href="#java" class="headerlink" title="java"></a>java</h4><ul>
-<li>线程和进程的区别</li>
-<li>对象头包括什么</li>
-<li>堆栈的区别</li>
-<li>垃圾回收算法</li>
-<li>单例模式的设计</li>
-<li>单例模式和static的联系和区别：纵观我整个面试我只有这个题没说出来，呵呵额呵呵呵呵呵</li>
-</ul>
-<p>面试完我去官网看状态，一秒变灰，我尼玛</p>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">public class HashSearch&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int hashlength = 13;</span><br><span class="line">        int[] array = &#123;12,6,5,8,20,23,56&#125;;</span><br><span class="line">        int[] hash = new int[hashlength];</span><br><span class="line">        for(int i=0;i&lt;array.length;i++)&#123;</span><br><span class="line">            insertHash(hash,hashlength,array[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        int result = searchHash(hash,hashlength,23);</span><br><span class="line">        if(result!= -1)</span><br><span class="line">            System.out.println(&quot;find it&quot; + result);</span><br><span class="line">        else</span><br><span class="line">            System.out.println(&quot;none&quot;);</span><br><span class="line">            </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">/****</span><br><span class="line"> * searchHash</span><br><span class="line"> * @param hash</span><br><span class="line"> * @param hashlength</span><br><span class="line"> * @param value</span><br><span class="line"> * @return</span><br><span class="line"> */</span><br><span class="line">public static int searchHash(int[] hash, int hashlength, int value)&#123;</span><br><span class="line">    int hashkey = value % hashlength;</span><br><span class="line">    while (hash[hashkey] != 0 &amp;&amp; hash[hashkey]!= value)&#123;</span><br><span class="line">        hashkey = (++hashkey) % hashlength;</span><br><span class="line">    &#125;</span><br><span class="line">    if (hash[hashkey]==0)</span><br><span class="line">        return -1;</span><br><span class="line">    return hashkey;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/****</span><br><span class="line"> * insertHash</span><br><span class="line"> * @param hash</span><br><span class="line"> * @param hashlength</span><br><span class="line"> * @param value</span><br><span class="line"> */</span><br><span class="line">public static void insertHash(int[] hash, int hashlength, int value)&#123;</span><br><span class="line">    int hashkey = value % hashlength;</span><br><span class="line">    while (hash[hashkey]!=0)&#123;</span><br><span class="line">        hashkey = (++hashkey) % hashlength;</span><br><span class="line">    &#125;</span><br><span class="line">    hash[hashkey] = value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>实现哈希映射为“除法取余法”，冲突为“链式地址法”，代码如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">package com.ys.hash;</span><br><span class="line">import com.ys.hash.SortLink.LinkNode;</span><br><span class="line"></span><br><span class="line">public class HashChain&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int hashlength = 13;</span><br><span class="line">        int[] array = &#123;12,6,5,8,20,23,56&#125;;</span><br><span class="line">        hash = new SortLink[hashlength];</span><br><span class="line">        for(int i=0;i&lt;array.length;i++)&#123;</span><br><span class="line">            insertHash(hash,hashlength,array[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        int result = searchHash(hash,hashlength,23);</span><br><span class="line">        if(result!= -1)</span><br><span class="line">            System.out.println(&quot;find it&quot; + result);</span><br><span class="line">        else</span><br><span class="line">            System.out.println(&quot;none&quot;);</span><br><span class="line">            </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">/****</span><br><span class="line"> * insertHash</span><br><span class="line"> * @param hash</span><br><span class="line"> * @param hashlength</span><br><span class="line"> * @param value</span><br><span class="line"> */</span><br><span class="line">public static void insertHash(SortLink[] hash, int hashlength, int value)&#123;</span><br><span class="line">    int hashkey = value % hashlength;</span><br><span class="line">    hash[hashkey].insert(value);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/****</span><br><span class="line"> * searchHash</span><br><span class="line"> * @param hash</span><br><span class="line"> * @param hashlength</span><br><span class="line"> * @param value</span><br><span class="line"> * @return</span><br><span class="line"> */</span><br><span class="line">public static int searchHash(SortLink[] hash, int hashlength, int value)&#123;</span><br><span class="line">    int hashkey = value % hashlength;</span><br><span class="line">    LinkNode node = hash[hashkey].find(value);</span><br><span class="line">    return node;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -249,7 +237,7 @@
     <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/03/%E8%85%BE%E8%AE%AF%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0%E8%BF%B7%E6%83%91%E9%9D%A2%E7%BB%8F/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/21/HashTable/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -263,9 +251,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2019/11/23/git-learning/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          git-learning
+        
+      </div>
+    </a>
   
-    <a href="/2020/04/03/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%9F%BA%E7%A1%80%E7%AF%87-rabbitMQ-kafka/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">消息中间件基础篇-rabbitMQ&amp;kafka</div>
+  
+    <a href="/2019/11/21/JavaLearningNote-Thinking-in-java/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JavaLearningNote-Thinking-in-java</div>
       <i class="icon-circle-right"></i>
     </a>
   

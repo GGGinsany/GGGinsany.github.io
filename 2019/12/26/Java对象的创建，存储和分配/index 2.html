@@ -6,16 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>腾讯暑期实习迷惑面经 | Hexo</title>
+  <title>Java对象的创建，存储和分配 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这个经历写出来完全出于强迫症和泄愤。面试过程中被问了三次是否考虑去深圳，在得到否定的答复后，整个流程变得异常的赶。每个问题只给我两分钟的考虑时间，答不出来也不给提示，直接问下一个。好几次都是他问了下一个问题，我才很尬的说呵呵呵呵呵呵我先说下上个问题的答案balabala。总之，把问到的问题记录下。">
+  <meta name="description" content="java对象的创建过程汇编码 12345newdupinvokespecialastore_1return new:申请内存，赋默认值 invokespecial:调用构造方法，赋初始值 astore：建立关联？">
 <meta property="og:type" content="article">
-<meta property="og:title" content="腾讯暑期实习迷惑面经">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;04&#x2F;03&#x2F;%E8%85%BE%E8%AE%AF%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0%E8%BF%B7%E6%83%91%E9%9D%A2%E7%BB%8F&#x2F;index.html">
+<meta property="og:title" content="Java对象的创建，存储和分配">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;26&#x2F;Java%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA%EF%BC%8C%E5%AD%98%E5%82%A8%E5%92%8C%E5%88%86%E9%85%8D&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="这个经历写出来完全出于强迫症和泄愤。面试过程中被问了三次是否考虑去深圳，在得到否定的答复后，整个流程变得异常的赶。每个问题只给我两分钟的考虑时间，答不出来也不给提示，直接问下一个。好几次都是他问了下一个问题，我才很尬的说呵呵呵呵呵呵我先说下上个问题的答案balabala。总之，把问到的问题记录下。">
+<meta property="og:description" content="java对象的创建过程汇编码 12345newdupinvokespecialastore_1return new:申请内存，赋默认值 invokespecial:调用构造方法，赋初始值 astore：建立关联？">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-04-03T09:43:07.643Z">
+<meta property="og:updated_time" content="2019-12-27T12:56:22.000Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -148,49 +148,97 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-腾讯暑期实习迷惑面经" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Java对象的创建，存储和分配" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      腾讯暑期实习迷惑面经
+      Java对象的创建，存储和分配
     </h1>
   
 
         
-        <a href="/2020/04/03/%E8%85%BE%E8%AE%AF%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0%E8%BF%B7%E6%83%91%E9%9D%A2%E7%BB%8F/" class="archive-article-date">
-  	<time datetime="2020-04-03T09:26:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
+        <a href="/2019/12/26/Java%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA%EF%BC%8C%E5%AD%98%E5%82%A8%E5%92%8C%E5%88%86%E9%85%8D/" class="archive-article-date">
+  	<time datetime="2019-12-26T12:03:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>这个经历写出来完全出于强迫症和泄愤。面试过程中被问了三次是否考虑去深圳，在得到否定的答复后，整个流程变得异常的赶。每个问题只给我两分钟的考虑时间，答不出来也不给提示，直接问下一个。好几次都是他问了下一个问题，我才很尬的说呵呵呵呵呵呵我先说下上个问题的答案balabala。总之，把问到的问题记录下。</p>
+        <hr>
+<h3 id="java对象的创建过程"><a href="#java对象的创建过程" class="headerlink" title="java对象的创建过程"></a>java对象的创建过程</h3><p>汇编码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">new</span><br><span class="line">dup</span><br><span class="line">invokespecial</span><br><span class="line">astore_1</span><br><span class="line">return</span><br></pre></td></tr></table></figure>
+<p>new:申请内存，赋默认值</p>
+<p>invokespecial:调用构造方法，赋初始值</p>
+<p>astore：建立关联？</p>
 <a id="more"></a>
-<h4 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h4><p>哎这个不多说了</p>
-<h4 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h4><ul>
-<li>链表反转</li>
-<li>抢红包算法的实现</li>
-<li>用两个栈实现队列</li>
-<li>矩阵翻转</li>
+<hr>
+<h3 id="java对象在内存中的存储布局"><a href="#java对象在内存中的存储布局" class="headerlink" title="java对象在内存中的存储布局"></a>java对象在内存中的存储布局</h3><ul>
+<li><p>存储布局</p>
+<ul>
+<li><p>对象头markword</p>
+<ul>
+<li><p>identity hashcode（25bit）：根据内存地址产生的hash值？</p>
+</li>
+<li><p>分代信息（4bit）：故，最大15</p>
+</li>
+<li><p>锁信息（3bit）：</p>
+<p>0 01：偏向锁</p>
+<p>0 00：轻量级锁</p>
+<p>0 10：该对象正在被gc线程用的标志</p>
+<p>0 11：重量级锁：申请重量级锁之前对象先转为内核态，锁的归属不由JVM决定而是取决于操作系统</p>
+<p>1 01： 非偏向锁</p>
+</li>
 </ul>
-<h4 id="测试相关"><a href="#测试相关" class="headerlink" title="测试相关"></a>测试相关</h4><ul>
-<li>输入栏和提交接口的测试方案</li>
-<li>登录接口的测试：我他妈的发现腾讯就是他妈的很喜欢问登录接口怎么测试</li>
-<li>性能测试相关</li>
+</li>
+<li><p>类型指针 eg  Object.class</p>
+</li>
+<li><p>实例数据</p>
+</li>
+<li><p>对齐填充：取决于几bit的虚拟机 能被8或16整除这样</p>
+</li>
 </ul>
-<h4 id="java"><a href="#java" class="headerlink" title="java"></a>java</h4><ul>
-<li>线程和进程的区别</li>
-<li>对象头包括什么</li>
-<li>堆栈的区别</li>
-<li>垃圾回收算法</li>
-<li>单例模式的设计</li>
-<li>单例模式和static的联系和区别：纵观我整个面试我只有这个题没说出来，呵呵额呵呵呵呵呵</li>
+</li>
 </ul>
-<p>面试完我去官网看状态，一秒变灰，我尼玛</p>
+<hr>
+<h3 id="对象怎么定位？"><a href="#对象怎么定位？" class="headerlink" title="对象怎么定位？"></a>对象怎么定位？</h3><ul>
+<li><p>句柄访问： Object o = new object()，new object作为实例对象存放在java堆中，o作为一个本地引用存在java栈的本地变量表中。使用句柄访问方式，java堆会划分一部分内存作为句柄池，在引用中存放对象的句柄地址，句柄中包含帝乡的地址和类型数据信息。</p>
+</li>
+<li><p>直接指针访问<br>reference存放对象地址，java堆对象的布局考虑如何放置访问类型的相关信息。</p>
+</li>
+</ul>
+<p>这两种访问方式各有利弊，使用句柄访最大的好处是reference中存储着稳定的句柄地址，当对象移动之后（gc时移动对象是非常普遍的行为），只需要改变句柄中的对象实例地址即可，reference不用修改。</p>
+<p>使用指针访问的好处是访问速度快，它减少了一次指针定位的时间开销，由于java是面向对象的语言，在开发中java对象的访问非常的频繁，因此这类开销积少成多也是非常可观的，反之则提升访问速度。</p>
+<hr>
+<h3 id="对象怎么分配？"><a href="#对象怎么分配？" class="headerlink" title="对象怎么分配？"></a>对象怎么分配？</h3><ul>
+<li>Java 对象一般分配在堆上，而堆空间又是所有线程共享的</li>
+<li>堆外内存也叫直接内存。直接内存是直接向操作系统申请的内存区域，访问直接内存的速度一般会优于堆内存，大小受限。</li>
+<li>栈上分配：逃逸分析的目的是判断对象的作用域是否可能逃出方法体。</li>
+</ul>
+<p>判断依据有两个：1. 对象是否被存入堆中:一旦对象被分配在堆中，那所有线程都可以访问到该对象，这样即时编译器就追踪不到所有使用到该对象的地方了，这样的对象就属于逃逸对象 2. 对象是否被传入未知代码中:即时编译器会把方法中未被内联的方法当成未知代码，所以无法判断这个未知方法的方法调用会不会将调用者或参数放到堆中，所以认为方法的调用者和参数是逃逸的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public class escape&#123;</span><br><span class="line">    private static User u;//</span><br><span class="line">    public static void alloc(User u)&#123;//</span><br><span class="line">        u = user</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>分配在栈上的好处是方法结束后自动释放对应的内存,省掉了 jvm 进行垃圾回收，进而可以提高系统的性能.</p>
+<ul>
+<li>怎么验证对象被分配到栈上？<br>创建数量很多，占内存大于设置的堆内存的对象，应该会发生 gc，如果设置的特别小，应该会发生大量的 gc。如果gc次数不高的话可以得出大部分对象被分配到栈上的结论</li>
+</ul>
+<hr>
+<h3 id="Object-o-new-object-在内存中占用多少字节？"><a href="#Object-o-new-object-在内存中占用多少字节？" class="headerlink" title="Object o = new object()在内存中占用多少字节？"></a>Object o = new object()在内存中占用多少字节？</h3><p>对象由四部分组成：</p>
+<ol>
+<li>对象头：记录对象的实例名字和id，普通对象占用8bytes，数组占用12bytes（8bytes的普通对象头和4bytes的数组长度）</li>
+<li>基本类型：基本类型<br>boolean,byte 占用 1 byte<br>char,short 占用 2 bytes<br>int,float 占用 4 bytes<br>long,double 占用 8 bytes</li>
+<li>每个引用类型占用 4 bytes</li>
+<li>填充物：以 8 的倍数计算，不足 8 的倍数会自动补齐</li>
+</ol>
+<hr>
+<h3 id="DCL和volitale"><a href="#DCL和volitale" class="headerlink" title="DCL和volitale"></a>DCL和volitale</h3><p>单例设计模式(类下只有一个对象)的一种解决方法是DCL(double check lock).</p>
+<p>volatile的两个特性：</p>
+<ol>
+<li>透明，一个线程对数据的改变马上对里另一个线程可见</li>
+<li>禁止指令重排序。</li>
+</ol>
 
       
 
@@ -249,7 +297,7 @@
     <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/03/%E8%85%BE%E8%AE%AF%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0%E8%BF%B7%E6%83%91%E9%9D%A2%E7%BB%8F/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/26/Java%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA%EF%BC%8C%E5%AD%98%E5%82%A8%E5%92%8C%E5%88%86%E9%85%8D/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -263,9 +311,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2019/12/27/HashMap-vs-HashTable/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          HashMap vs. HashTable
+        
+      </div>
+    </a>
   
-    <a href="/2020/04/03/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%9F%BA%E7%A1%80%E7%AF%87-rabbitMQ-kafka/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">消息中间件基础篇-rabbitMQ&amp;kafka</div>
+  
+    <a href="/2019/12/24/%E4%BF%84%E7%BD%97%E6%96%AF%E6%96%B9%E5%9D%97%E6%B8%B8%E6%88%8F%E7%9A%84java%E5%AE%9E%E7%8E%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">俄罗斯方块游戏的java实现</div>
       <i class="icon-circle-right"></i>
     </a>
   
