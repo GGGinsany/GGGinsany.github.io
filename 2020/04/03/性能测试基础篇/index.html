@@ -6,13 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | Hexo</title>
+  <title>性能测试基础篇 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;2020&#x2F;index.html">
+  <meta name="description" content="测试范围 高频使用场景  关键业务场景  耗能场景  曾经cursh过的场景  压力测试不支持在测试环境下操作，只能在线上环境验证，所以压测通常放在最后。 测试目标 发现性能问题，评估性能瓶颈  全链路压测为后续扩容做好准备 压测流程 确认压测场景，理清压测链路，预测对上下游服务产生的影响并提前知会对应服务。调研相关公用组件（DB，缓存，消息中间件，redis日志存储）是否能承担你带来的压力，否则">
+<meta property="og:type" content="article">
+<meta property="og:title" content="性能测试基础篇">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;04&#x2F;03&#x2F;%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80%E7%AF%87&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="测试范围 高频使用场景  关键业务场景  耗能场景  曾经cursh过的场景  压力测试不支持在测试环境下操作，只能在线上环境验证，所以压测通常放在最后。 测试目标 发现性能问题，评估性能瓶颈  全链路压测为后续扩容做好准备 压测流程 确认压测场景，理清压测链路，预测对上下游服务产生的影响并提前知会对应服务。调研相关公用组件（DB，缓存，消息中间件，redis日志存储）是否能承担你带来的压力，否则">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-04-03T05:07:54.923Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -145,292 +148,193 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-性能测试基础篇" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/03/%E8%85%BE%E8%AE%AF%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0%E8%BF%B7%E6%83%91%E9%9D%A2%E7%BB%8F/" class="archive-article-date">
-  	<time datetime="2020-04-03T09:26:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/03/%E8%85%BE%E8%AE%AF%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0%E8%BF%B7%E6%83%91%E9%9D%A2%E7%BB%8F/">腾讯暑期实习迷惑面经</a>
+    <h1 class="article-title" itemprop="name">
+      性能测试基础篇
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/03/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%9F%BA%E7%A1%80%E7%AF%87-rabbitMQ-kafka/" class="archive-article-date">
-  	<time datetime="2020-04-03T05:12:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/03/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%9F%BA%E7%A1%80%E7%AF%87-rabbitMQ-kafka/">消息中间件基础篇-rabbitMQ&amp;kafka</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/03/devops%E6%95%88%E8%83%BD%E5%B9%B3%E5%8F%B0/" class="archive-article-date">
-  	<time datetime="2020-04-03T05:11:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/03/devops%E6%95%88%E8%83%BD%E5%B9%B3%E5%8F%B0/">devops效能平台</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/03/stf%E5%B9%B3%E5%8F%B0%E5%92%8Cadb%E6%A1%86%E6%9E%B6/" class="archive-article-date">
-  	<time datetime="2020-04-03T05:08:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/03/stf%E5%B9%B3%E5%8F%B0%E5%92%8Cadb%E6%A1%86%E6%9E%B6/">stf平台和adb框架</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/03/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80%E7%AF%87/" class="archive-article-date">
+        
+        <a href="/2020/04/03/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80%E7%AF%87/" class="archive-article-date">
   	<time datetime="2020-04-03T04:04:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/03/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80%E7%AF%87/">性能测试基础篇</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="测试范围"><a href="#测试范围" class="headerlink" title="测试范围"></a>测试范围</h3><ul>
+<li><p>高频使用场景</p>
+</li>
+<li><p>关键业务场景</p>
+</li>
+<li><p>耗能场景</p>
+</li>
+<li><p>曾经cursh过的场景</p>
+</li>
+<li><p>压力测试不支持在测试环境下操作，只能在线上环境验证，所以压测通常放在最后。</p>
+<h3 id="测试目标"><a href="#测试目标" class="headerlink" title="测试目标"></a>测试目标</h3></li>
+<li><p>发现性能问题，评估性能瓶颈</p>
+</li>
+<li><p>全链路压测为后续扩容做好准备</p>
+<h3 id="压测流程"><a href="#压测流程" class="headerlink" title="压测流程"></a>压测流程</h3></li>
+<li><p>确认压测场景，理清压测链路，预测对上下游服务产生的影响并提前知会对应服务。调研相关公用组件（DB，缓存，消息中间件，redis日志存储）是否能承担你带来的压力，否则会带来比系统崩溃更大的结果。</p>
+</li>
+<li><p>可能涉及链路仿真or影子链路：建立一条和真实链路相近但是数据隔离（影子DB）的影子链路。但是有些节点不能支持这种链路。</p>
+</li>
+<li><p>与具体业务方沟通明确压测目标：RT,VU,QPS,Pct99,CPU,Memory,Error_rate</p>
+</li>
+<li><p>容量摸高，推算预期并发，逐步探索极限：压测的开始启动和开始结束的时间段内，涉及大量线程的创建和销毁，监控曲线不稳定</p>
+</li>
+<li><p>监测平台涉及：服务器监测，服务端监测，客户端监测</p>
+<h3 id="如何摸高"><a href="#如何摸高" class="headerlink" title="如何摸高"></a>如何摸高</h3><h4 id="系统指标-amp-业务指标"><a href="#系统指标-amp-业务指标" class="headerlink" title="系统指标&amp;业务指标"></a>系统指标&amp;业务指标</h4></li>
+<li><p>Load,cpu,memory,并发数</p>
+</li>
+<li><p>QPS,TPS,RT</p>
+<h4 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h4></li>
+<li><p>Qps模式设置为1qps，得到RT</p>
+</li>
+<li><p>VU = QPS*RT推算预期并发</p>
+</li>
+<li><p>增量的摸高,安全加压：预估+拐点附近小步长试探</p>
+</li>
+<li><p>（个人感觉）：在递增的qps下查看RT和系统水位得到打破线性时的拐点</p>
+<h3 id="问题排查"><a href="#问题排查" class="headerlink" title="问题排查"></a>问题排查</h3></li>
+<li><p>RT不符合设计预期</p>
+</li>
+<li><p>系统水位增长过快：锁不合理，并发情况多</p>
+</li>
+<li><p>系统内存增长过快：</p>
+</li>
+<li><p>可用top命令检查消耗cpu多的线程</p>
+<h3 id="压测结果只能定性参考的原因"><a href="#压测结果只能定性参考的原因" class="headerlink" title="压测结果只能定性参考的原因"></a>压测结果只能定性参考的原因</h3></li>
+<li><p>不真实，主要体现在 ① 环境不真实② 压测（脚本）模型不真实</p>
+</li>
+<li><p>并发测试的效果真实性依赖于RT，而RT的构成异常复杂</p>
+</li>
+</ul>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" target="_blank" rel="noopener" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/03/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80%E7%AF%87/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/03/JSON-JsonSchema/" class="archive-article-date">
-  	<time datetime="2020-04-03T03:48:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2020/04/03/stf%E5%B9%B3%E5%8F%B0%E5%92%8Cadb%E6%A1%86%E6%9E%B6/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          stf平台和adb框架
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/04/03/JSON-JsonSchema/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JSON===&gt;JsonSchema</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/03/JSON-JsonSchema/">JSON===&gt;JsonSchema</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/13/%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E5%8F%8C%E8%AE%BE%E5%A4%87%E6%9B%B4%E6%96%B0%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%B5%8B%E8%AF%95/" class="archive-article-date">
-  	<time datetime="2020-03-12T16:38:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/13/%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E5%8F%8C%E8%AE%BE%E5%A4%87%E6%9B%B4%E6%96%B0%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%B5%8B%E8%AF%95/">这是一个双设备更新博客的测试</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/12/%E8%85%BE%E8%AE%AF%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91%E4%B8%80%E9%9D%A2%E4%BA%8C%E9%9D%A2%E7%BB%8F%E9%AA%8C/" class="archive-article-date">
-  	<time datetime="2020-03-12T15:16:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/12/%E8%85%BE%E8%AE%AF%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91%E4%B8%80%E9%9D%A2%E4%BA%8C%E9%9D%A2%E7%BB%8F%E9%AA%8C/">腾讯测试开发一面二面经验</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/07/%E5%B9%B3%E5%AE%89%E9%9B%86%E5%9B%A2%E9%99%86%E9%87%91%E6%89%80%E5%BC%80%E5%8F%91%E6%B5%8B%E8%AF%95%E5%AE%9E%E4%B9%A0%E9%9D%A2%E8%AF%95%E7%BB%8F%E9%AA%8C/" class="archive-article-date">
-  	<time datetime="2020-01-07T10:54:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/07/%E5%B9%B3%E5%AE%89%E9%9B%86%E5%9B%A2%E9%99%86%E9%87%91%E6%89%80%E5%BC%80%E5%8F%91%E6%B5%8B%E8%AF%95%E5%AE%9E%E4%B9%A0%E9%9D%A2%E8%AF%95%E7%BB%8F%E9%AA%8C/">平安集团陆金所开发测试实习面试经验</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/06/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8%E6%B5%8B%E8%AF%95%E4%B8%8A%E6%B5%B7%E4%BA%8C%E9%9D%A2%E4%B8%89%E9%9D%A2%E7%BB%8F%E5%8E%86/" class="archive-article-date">
-  	<time datetime="2020-01-06T01:48:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/06/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8%E6%B5%8B%E8%AF%95%E4%B8%8A%E6%B5%B7%E4%BA%8C%E9%9D%A2%E4%B8%89%E9%9D%A2%E7%BB%8F%E5%8E%86/">字节跳动测试上海二面三面经历</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -453,8 +357,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

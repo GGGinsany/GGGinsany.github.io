@@ -6,11 +6,11 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;2020&#x2F;index.html">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;page&#x2F;3&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
@@ -147,290 +147,457 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Java多线程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/06/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/">Java多线程</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/06/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="archive-article-date">
+  	<time datetime="2019-12-06T05:09:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-06</time>
+</a>
+        
+      </header>
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一：Single Tread Execution</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">class myTread extends Tread&#123;</span><br><span class="line">    SharedSource share;</span><br><span class="line">    public myTread(SharedSource share)&#123;</span><br><span class="line">        this.share = share;</span><br><span class="line">    &#125;</span><br><span class="line">    public void run()&#123;</span><br><span class="line">        print()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class SharedSource&#123;</span><br><span class="line">    public synchronize void method1()&#123;&#125;;</span><br><span class="line">    public synchronize void method2()&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line">public class Main()&#123;</span><br><span class="line">    public Static void main(string[] args)&#123;</span><br><span class="line">        SharedSource share = new SharedSource()</span><br><span class="line">        new myTread(share).start();</span><br><span class="line">        new myTread(share).start();</span><br><span class="line">        new myTread(share).start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上述代码中由于SharedSource类同时被多个线程访问，在实际执行过程中，method1和method2可能交替执行，出现错误。故需保证类中的method需为safeMethod。在method12前加入sync关键字保证锁在多个线程之间传递。</p>
+<p>将只允许单个线程执行的程序范围称为临界区。</p>
+<ul>
+<li>何时使用：
+        
+          <a class="article-more-a" href="/2019/12/06/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/06/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="archives">
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Notes-小灰的算法之旅" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/03/%E8%85%BE%E8%AE%AF%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0%E8%BF%B7%E6%83%91%E9%9D%A2%E7%BB%8F/" class="archive-article-date">
-  	<time datetime="2020-04-03T09:26:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/03/%E8%85%BE%E8%AE%AF%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0%E8%BF%B7%E6%83%91%E9%9D%A2%E7%BB%8F/">腾讯暑期实习迷惑面经</a>
+      <a class="article-title" href="/2019/12/03/Notes-%E5%B0%8F%E7%81%B0%E7%9A%84%E7%AE%97%E6%B3%95%E4%B9%8B%E6%97%85/">Notes-小灰的算法之旅</a>
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        
+        <a href="/2019/12/03/Notes-%E5%B0%8F%E7%81%B0%E7%9A%84%E7%AE%97%E6%B3%95%E4%B9%8B%E6%97%85/" class="archive-article-date">
+  	<time datetime="2019-12-03T13:16:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="chap-1-算法概述"><a href="#chap-1-算法概述" class="headerlink" title="chap 1 算法概述"></a>chap 1 算法概述</h2><ul>
+<li>空间复杂度的计算：</li>
+</ul>
+<p>1.常量空间：算法的存储与输入规模没有直接的关系，空间复杂度记为O(1) </p>
+<p>2.线性空间：算法分配的空间是一个线性集合或者数组，并与输入规模呈正比O(n)</p>
+<p>3.二维空间：集合的长度和宽度都与输入规模成正比O(n^2)</p>
+<p>4.递归空间：计算机在执行程序是，会专门分配一块内存，用来存储方法调用栈。进入新方法对应入栈操作，把参数信息压栈，方法返回时执行出栈操作，把方法和参数信息出栈。执行递归操作所需要的内存空间和递归的深度成正比。纯粹的递归操作的空间复杂度也是线性的，如果递归的深度是n，那么空间复杂度就是O(n)。</p>
+        
+          <a class="article-more-a" href="/2019/12/03/Notes-%E5%B0%8F%E7%81%B0%E7%9A%84%E7%AE%97%E6%B3%95%E4%B9%8B%E6%97%85/#more">more >></a>
+        
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/03/Notes-%E5%B0%8F%E7%81%B0%E7%9A%84%E7%AE%97%E6%B3%95%E4%B9%8B%E6%97%85/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/03/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%9F%BA%E7%A1%80%E7%AF%87-rabbitMQ-kafka/" class="archive-article-date">
-  	<time datetime="2020-04-03T05:12:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
-</a>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-git-learning" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/03/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%9F%BA%E7%A1%80%E7%AF%87-rabbitMQ-kafka/">消息中间件基础篇-rabbitMQ&amp;kafka</a>
+      <a class="article-title" href="/2019/11/23/git-learning/">git-learning</a>
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        
+        <a href="/2019/11/23/git-learning/" class="archive-article-date">
+  	<time datetime="2019-11-23T07:18:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>将本地已有项目关联到github新的项目</li>
+</ul>
+<ol start="0">
+<li>前期准备：ssh key &amp; git</li>
+<li>在github上新建repository，设命名为“repo”，地址为“<a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:111/repo.git”</li>
+<li>进入本地文件夹，执行初始化git init</li>
+<li>设置远程地址 git remote add + 仓库名 +仓库地址，即 git remote add repo <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:111/repo.git</li>
+<li>git push repo master</li>
+<li>git pull repo master:可以先将github的代码pull下来</li>
+<li>git push repo master</li>
+</ol>
+<ul>
+<li>将github代码clone到本地仓库<br>git clone 远程仓库地址</li>
+</ul>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/23/git-learning/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/03/devops%E6%95%88%E8%83%BD%E5%B9%B3%E5%8F%B0/" class="archive-article-date">
-  	<time datetime="2020-04-03T05:11:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
-</a>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-HashTable" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/03/devops%E6%95%88%E8%83%BD%E5%B9%B3%E5%8F%B0/">devops效能平台</a>
+      <a class="article-title" href="/2019/11/21/HashTable/">HashTable</a>
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        
+        <a href="/2019/11/21/HashTable/" class="archive-article-date">
+  	<time datetime="2019-11-21T12:22:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="哈希表的原理及其相关算法"><a href="#哈希表的原理及其相关算法" class="headerlink" title="哈希表的原理及其相关算法"></a>哈希表的原理及其相关算法</h2><p>哈希表把任意长度的输入通过一种类似压缩映射的数学函数变换成固定长度的输出，并存储在一个有限的地址空间里。<br>哈希映射可表示为 key=f(value),构建哈希表需要考虑冗余度和复杂度。</p>
+<p>利用哈希表实现查找的步骤为：</p>
+<ul>
+<li>用给定的哈希函数f将待存数组value构造哈希表，尽量做到key尽可能分散，映射复杂度低。常见的有五种：直接定址key=value+c；除法取余key=value%c；数学分析；平方取中；折叠value=125860,key=12+58+60=130取key=30.</li>
+<li>选择冲突处理方法解决地址冲突，可选开放地址法（向后查找）和链式地址法（“链表的数组”）</li>
+<li>在哈希表的基础上执行哈希查找</li>
+</ul>
+<p>实现哈希映射为“除法取余法”，冲突为“开放地址线性探测法”，代码如下</p>
+        
+          <a class="article-more-a" href="/2019/11/21/HashTable/#more">more >></a>
+        
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/21/HashTable/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/03/stf%E5%B9%B3%E5%8F%B0%E5%92%8Cadb%E6%A1%86%E6%9E%B6/" class="archive-article-date">
-  	<time datetime="2020-04-03T05:08:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
-</a>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-JavaLearningNote-Thinking-in-java" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/03/stf%E5%B9%B3%E5%8F%B0%E5%92%8Cadb%E6%A1%86%E6%9E%B6/">stf平台和adb框架</a>
+      <a class="article-title" href="/2019/11/21/JavaLearningNote-Thinking-in-java/">JavaLearningNote-Thinking-in-java</a>
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        
+        <a href="/2019/11/21/JavaLearningNote-Thinking-in-java/" class="archive-article-date">
+  	<time datetime="2019-11-21T03:19:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="chap-2-一切都是对象"><a href="#chap-2-一切都是对象" class="headerlink" title="chap.2 一切都是对象"></a>chap.2 一切都是对象</h2><p>用引用(遥控器)操纵对象(电视机)，“String s”创建引用的同时最好初始化关联字符串对象 String s = “adfdf” ，java将未初始化的变量视为错误。</p>
+<p>String s = new String(“dsffff”) new操作符将引用与新的对象相关联</p>
+<p>五个存储数据的位置</p>
+<ul>
+<li>寄存器 </li>
+<li>堆栈</li>
+<li>堆</li>
+<li>常量存储</li>
+<li>非RAM存储</li>
+</ul>
+<p>基本类型、包装器：long 数据类型是 64 位有符号的 Java 原始数据类型。 当对整数的计算结果可能超出 int 数据类型的范围时使用<br>高精度数字<br>java中数组<br>java对象作用域</p>
+<hr>
+<p>Java类中可设置两种类型的元素：字段和方法。调用方法的行为通常被称为发送消息给对象。</p>
+<p>方法的参数列表指定</p>
+<hr>
+<p>一个Java程序的构建：</p>
+<p>static：</p>
+        
+          <a class="article-more-a" href="/2019/11/21/JavaLearningNote-Thinking-in-java/#more">more >></a>
+        
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/21/JavaLearningNote-Thinking-in-java/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/03/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80%E7%AF%87/" class="archive-article-date">
-  	<time datetime="2020-04-03T04:04:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
-</a>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-blog-using-technics" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/03/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80%E7%AF%87/">性能测试基础篇</a>
+      <a class="article-title" href="/2019/11/20/blog-using-technics/">blog-using-technics</a>
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/03/JSON-JsonSchema/" class="archive-article-date">
-  	<time datetime="2020-04-03T03:48:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
+        
+        <a href="/2019/11/20/blog-using-technics/" class="archive-article-date">
+  	<time datetime="2019-11-20T10:12:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-20</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/03/JSON-JsonSchema/">JSON===&gt;JsonSchema</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="blog-technics–all-you-need-to-know-when-you-creat-write-update-a-blog"><a href="#blog-technics–all-you-need-to-know-when-you-creat-write-update-a-blog" class="headerlink" title="blog technics–all you need to know when you creat/write/update a blog"></a>blog technics–all you need to know when you creat/write/update a blog</h2><ul>
+<li>enviorment preparation: git &amp; node &amp; hexo </li>
+<li>“hexo init” helps make a empty floder to be a local repository</li>
+<li>“hexo new” helps creat a new blog</li>
+<li>“hexo server/ hexo s”: provide an online preview</li>
+<li>“hexo deploy/ hexo d” deploy your blog in github</li>
+<li>“hexo clean”: clean the cache</li>
+</ul>
+<hr>
+<h2 id="connect-your-local-folder-to-a-github-repository"><a href="#connect-your-local-folder-to-a-github-repository" class="headerlink" title="connect your local folder to a github repository"></a>connect your local folder to a github repository</h2><ul>
+<li>在blog文件夹下安装git插件“cnpm install –save hexo-deployer-git”</li>
+<li>在“_config.yml”中更改配置 “type: git repo:远端github repo网址  branch:master”</li>
+</ul>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/20/blog-using-technics/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/13/%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E5%8F%8C%E8%AE%BE%E5%A4%87%E6%9B%B4%E6%96%B0%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%B5%8B%E8%AF%95/" class="archive-article-date">
-  	<time datetime="2020-03-12T16:38:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-13</time>
-</a>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/13/%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E5%8F%8C%E8%AE%BE%E5%A4%87%E6%9B%B4%E6%96%B0%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%B5%8B%E8%AF%95/">这是一个双设备更新博客的测试</a>
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/12/%E8%85%BE%E8%AE%AF%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91%E4%B8%80%E9%9D%A2%E4%BA%8C%E9%9D%A2%E7%BB%8F%E9%AA%8C/" class="archive-article-date">
-  	<time datetime="2020-03-12T15:16:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/12/%E8%85%BE%E8%AE%AF%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91%E4%B8%80%E9%9D%A2%E4%BA%8C%E9%9D%A2%E7%BB%8F%E9%AA%8C/">腾讯测试开发一面二面经验</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/07/%E5%B9%B3%E5%AE%89%E9%9B%86%E5%9B%A2%E9%99%86%E9%87%91%E6%89%80%E5%BC%80%E5%8F%91%E6%B5%8B%E8%AF%95%E5%AE%9E%E4%B9%A0%E9%9D%A2%E8%AF%95%E7%BB%8F%E9%AA%8C/" class="archive-article-date">
-  	<time datetime="2020-01-07T10:54:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/07/%E5%B9%B3%E5%AE%89%E9%9B%86%E5%9B%A2%E9%99%86%E9%87%91%E6%89%80%E5%BC%80%E5%8F%91%E6%B5%8B%E8%AF%95%E5%AE%9E%E4%B9%A0%E9%9D%A2%E8%AF%95%E7%BB%8F%E9%AA%8C/">平安集团陆金所开发测试实习面试经验</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/06/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8%E6%B5%8B%E8%AF%95%E4%B8%8A%E6%B5%B7%E4%BA%8C%E9%9D%A2%E4%B8%89%E9%9D%A2%E7%BB%8F%E5%8E%86/" class="archive-article-date">
-  	<time datetime="2020-01-06T01:48:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/06/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8%E6%B5%8B%E8%AF%95%E4%B8%8A%E6%B5%B7%E4%BA%8C%E9%9D%A2%E4%B8%89%E9%9D%A2%E7%BB%8F%E5%8E%86/">字节跳动测试上海二面三面经历</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    </nav>
   
-
-    
 
 
           </div>
@@ -452,9 +619,9 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
+		isHome: true,
 		isPost: false,
-		isArchive: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
