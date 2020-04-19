@@ -6,13 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>到底什么是重定向 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;page&#x2F;2&#x2F;index.html">
+  <meta name="description" content="到底什么是重定向&amp;amp;重定向和转发的区别重定向和转发是什么 重定向：客户端发送请求到服务器—服务器返回一个url—客户端重新向该url发送请求—客户端得到响应 转发：客户端发送请求到服务器—服务器将请求转发给同一个web应用的其他组件并返回resp—客户端得到响应  重定向与转发的区别 重定向访问过程结束后，statuscode=30x,浏览器地址栏中显示的URL会发生改变，由初始的URL地址">
+<meta property="og:type" content="article">
+<meta property="og:title" content="到底什么是重定向">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;04&#x2F;18&#x2F;%E5%88%B0%E5%BA%95%E4%BB%80%E4%B9%88%E6%98%AF%E9%87%8D%E5%AE%9A%E5%90%91&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="到底什么是重定向&amp;amp;重定向和转发的区别重定向和转发是什么 重定向：客户端发送请求到服务器—服务器返回一个url—客户端重新向该url发送请求—客户端得到响应 转发：客户端发送请求到服务器—服务器将请求转发给同一个web应用的其他组件并返回resp—客户端得到响应  重定向与转发的区别 重定向访问过程结束后，statuscode=30x,浏览器地址栏中显示的URL会发生改变，由初始的URL地址">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-04-19T15:28:48.682Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -145,295 +148,153 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-到底什么是重定向" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      到底什么是重定向
+    </h1>
+  
+
+        
+        <a href="/2020/04/18/%E5%88%B0%E5%BA%95%E4%BB%80%E4%B9%88%E6%98%AF%E9%87%8D%E5%AE%9A%E5%90%91/" class="archive-article-date">
+  	<time datetime="2020-04-18T14:36:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-18</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="到底什么是重定向-amp-重定向和转发的区别"><a href="#到底什么是重定向-amp-重定向和转发的区别" class="headerlink" title="到底什么是重定向&amp;重定向和转发的区别"></a>到底什么是重定向&amp;重定向和转发的区别</h2><h3 id="重定向和转发是什么"><a href="#重定向和转发是什么" class="headerlink" title="重定向和转发是什么"></a>重定向和转发是什么</h3><ul>
+<li>重定向：客户端发送请求到服务器—服务器返回一个url—客户端重新向该url发送请求—客户端得到响应</li>
+<li>转发：客户端发送请求到服务器—服务器将请求转发给同一个web应用的其他组件并返回resp—客户端得到响应</li>
+</ul>
+<h3 id="重定向与转发的区别"><a href="#重定向与转发的区别" class="headerlink" title="重定向与转发的区别"></a>重定向与转发的区别</h3><ol>
+<li>重定向访问过程结束后，statuscode=30x,浏览器地址栏中显示的URL会发生改变，由初始的URL地址变成重定向的目标URL；请求转发过程结束后，浏览器地址栏保持初始的URL地址不变。<blockquote>
+<p>重定向是显式的，转发是隐式的。</p>
+</blockquote>
+</li>
+<li>重定向的实现：response.sendRedirec();转发：request.getRequestDispatcher().forward()</li>
+<li>请求可以重定向到当前应用程序中的其他资源，还可以重定向到同一个站点上的其他应用程序中的资源，甚至是使用绝对URL重定向到其他站点的资源，而转发只能访问本web的其他组件。</li>
+<li>重定向的时候，客户端一共发出了两次请求，收到了两次回复；转发客户端只发出了一次请求。</li>
+</ol>
+<h3 id="重定向与转发的选择"><a href="#重定向与转发的选择" class="headerlink" title="重定向与转发的选择"></a>重定向与转发的选择</h3><ol>
+<li><p>重定向的速度比转发慢，因为涉及到请求的两次发送。在使用转发和重定向都无所谓的时候建议使用转发。</p>
+</li>
+<li><p>因为转发只能访问当前WEB的应用程序，所以不同WEB应用程序之间的访问，特别是要访问到另外一个WEB站点上的资源的情况，这个时候就只能使用重定向了。</p>
+</li>
+</ol>
+<h3 id="实际应用场景"><a href="#实际应用场景" class="headerlink" title="实际应用场景"></a>实际应用场景</h3><p>避免在用户重新加载页面时两次调用相同的动作：提交表单后如果涉及到数据库的保存操作，可以将提交后的页面重定向到另一个页面避免刷新带来的重复提交</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/23/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" class="archive-article-date">
-  	<time datetime="2019-12-23T05:54:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/23/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/">二分查找</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" target="_blank" rel="noopener" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/18/%E5%88%B0%E5%BA%95%E4%BB%80%E4%B9%88%E6%98%AF%E9%87%8D%E5%AE%9A%E5%90%91/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/23/SQL-basis/" class="archive-article-date">
-  	<time datetime="2019-12-23T05:06:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-23</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/04/18/%E5%A4%9A%E7%BA%BF%E7%A8%8B-basis/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">多线程-basis</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/23/SQL-basis/">SQL basis</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/19/SoC%E4%BA%8C%E9%98%B6%E9%94%A5%E4%BC%98%E5%8C%96/" class="archive-article-date">
-  	<time datetime="2019-12-19T07:12:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/19/SoC%E4%BA%8C%E9%98%B6%E9%94%A5%E4%BC%98%E5%8C%96/">SoC二阶锥优化</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/19/Java%E4%B8%AD%E5%AE%B9%E5%99%A8%E7%B1%BB/" class="archive-article-date">
-  	<time datetime="2019-12-19T05:05:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/19/Java%E4%B8%AD%E5%AE%B9%E5%99%A8%E7%B1%BB/">Java中容器类</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/06/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2019-12-06T05:09:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/06/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/">Java多线程</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/03/Notes-%E5%B0%8F%E7%81%B0%E7%9A%84%E7%AE%97%E6%B3%95%E4%B9%8B%E6%97%85/" class="archive-article-date">
-  	<time datetime="2019-12-03T13:16:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/03/Notes-%E5%B0%8F%E7%81%B0%E7%9A%84%E7%AE%97%E6%B3%95%E4%B9%8B%E6%97%85/">Notes-小灰的算法之旅</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/23/git-learning/" class="archive-article-date">
-  	<time datetime="2019-11-23T07:18:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/23/git-learning/">git-learning</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/21/HashTable/" class="archive-article-date">
-  	<time datetime="2019-11-21T12:22:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/21/HashTable/">HashTable</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/21/JavaLearningNote-Thinking-in-java/" class="archive-article-date">
-  	<time datetime="2019-11-21T03:19:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/21/JavaLearningNote-Thinking-in-java/">JavaLearningNote-Thinking-in-java</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/20/blog-using-technics/" class="archive-article-date">
-  	<time datetime="2019-11-20T10:12:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/20/blog-using-technics/">blog-using-technics</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&amp;laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-    </nav>
   
 
 
@@ -457,8 +318,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

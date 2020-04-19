@@ -6,16 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>计算机网络basis | Hexo</title>
+  <title>Linux指令与基础网络编程 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="TCP&#x2F;IP协议的三次握手和四次挥手  连接建立阶段：Client向Server发送sync请求同步标志，Server接受连接后回复ack确认标志并为此次连接分配资源，Client端收到ack标志后也向Server发送ack报文并分配资源，这样TCP连接就建立了。">
+  <meta name="description" content="基础指令–可组合使用系统相关 sync &#x2F;&#x2F;关机前的同步  shutdown&#x2F;&#x2F;关机  reboot&#x2F;&#x2F;重启  halt&#x2F;&#x2F;  ifconfig&#x2F;&#x2F;查看网络配置  文件配置  linux所有文件都挂载在根目录 &#x2F; 下 &#x2F;bin：存放可执行文件 &#x2F;etc：存放所有的配置文件 &#x2F;home：用户主目录 &#x2F;opt：额外软件的安装目录 &#x2F;lib：系统的动态连接共享库，类似win的ddl &#x2F;root：系统管理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计算机网络basis">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;27&#x2F;%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9Cbasis&#x2F;index.html">
+<meta property="og:title" content="Linux指令与基础网络编程">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;04&#x2F;18&#x2F;Linux%E6%8C%87%E4%BB%A4%E4%B8%8E%E5%9F%BA%E7%A1%80%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="TCP&#x2F;IP协议的三次握手和四次挥手  连接建立阶段：Client向Server发送sync请求同步标志，Server接受连接后回复ack确认标志并为此次连接分配资源，Client端收到ack标志后也向Server发送ack报文并分配资源，这样TCP连接就建立了。">
+<meta property="og:description" content="基础指令–可组合使用系统相关 sync &#x2F;&#x2F;关机前的同步  shutdown&#x2F;&#x2F;关机  reboot&#x2F;&#x2F;重启  halt&#x2F;&#x2F;  ifconfig&#x2F;&#x2F;查看网络配置  文件配置  linux所有文件都挂载在根目录 &#x2F; 下 &#x2F;bin：存放可执行文件 &#x2F;etc：存放所有的配置文件 &#x2F;home：用户主目录 &#x2F;opt：额外软件的安装目录 &#x2F;lib：系统的动态连接共享库，类似win的ddl &#x2F;root：系统管理">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-30T08:11:22.000Z">
+<meta property="og:updated_time" content="2020-04-19T14:48:32.861Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -148,70 +148,300 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-计算机网络basis" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Linux指令与基础网络编程" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      计算机网络basis
+      Linux指令与基础网络编程
     </h1>
   
 
         
-        <a href="/2019/12/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9Cbasis/" class="archive-article-date">
-  	<time datetime="2019-12-27T14:16:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-27</time>
+        <a href="/2020/04/18/Linux%E6%8C%87%E4%BB%A4%E4%B8%8E%E5%9F%BA%E7%A1%80%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" class="archive-article-date">
+  	<time datetime="2020-04-18T14:35:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-18</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ol>
-<li>TCP/IP协议的三次握手和四次挥手</li>
-</ol>
-<p>连接建立阶段：Client向Server发送sync请求同步标志，Server接受连接后回复ack确认标志并为此次连接分配资源，Client端收到ack标志后也向Server发送ack报文并分配资源，这样TCP连接就建立了。</p>
-<a id="more"></a>
-<p>why三次握手？：节约资源，保证服务器端的每个应答都对应一个客户端的来源，如果只有两次握手，那么当网络阻塞的过程中，客户端有可能连续发送好几个sync请求同步，如果服务器对这几个全部产生应答，会带来很大的资源浪费。</p>
-<p>连接释放阶段：Client发送Fin结束标志，Server收到Fin时不必着急关闭socket(端口)，可以继续发送消息。Server端发送ack确认标志表示“关闭请求已经收到，但是我这边还没准备好”。当Server端确认发送完成之后发送Fin标志给Client端，准备关闭连接。Sever端收到Fin标志后发送ACk确认标志并进入time-wait状态。Server端收到ack标志后关闭连接，Client等待一段时间后没有收到回复也关闭连接。</p>
-<p>why四次挥手？：客户端发送数据完成后，有可能存在着服务器端的传输还没结束的情况。四次挥手代表一个合约的完整执行。</p>
-<ol start="2">
-<li><p>DNS协议<br>DNS是域名系统的缩写，可以理解为将url转换为ip地址。每一个域名对硬件一个唯一的ip地址。在internet上域名和ip地址是一一对应的，DNS就是进行域名解析的服务器。</p>
+        <h2 id="基础指令–可组合使用"><a href="#基础指令–可组合使用" class="headerlink" title="基础指令–可组合使用"></a>基础指令–可组合使用</h2><h3 id="系统相关"><a href="#系统相关" class="headerlink" title="系统相关"></a>系统相关</h3><ul>
+<li><p>sync //关机前的同步</p>
 </li>
-<li><p>HTTP协议：超文本传输协议的请求有：<br>　　GET：请求读取由URL所标志的信息。<br>　　POST：给服务器添加信息（如注释）。<br>　　PUT：在给定的URL下存储一个文档。<br>　　DELETE：删除给定的URL所标志的资源。</p>
+<li><p>shutdown//关机</p>
 </li>
-<li><p>HTTP和HTTPS的区别</p>
+<li><p>reboot//重启</p>
+</li>
+<li><p>halt//</p>
+</li>
+<li><p>ifconfig//查看网络配置</p>
+</li>
+<li><p>文件配置</p>
 <ul>
-<li>HTTP协议是互联网应用最为广泛的一种协议，是一个客户端和服务器端请求和应答的标准(),用于www服务器传输超文本到本地浏览器的传输协议，使浏览器传输更加高效。但是HTTP协议传输的数据都是未加密的，明文的，因此用该协议传输隐私信息比如信用卡号和密码等信息就非常不安全。</li>
-<li>HTTPS是由SSL+HTTP构建的可进行加密传输和身份认证的网络协议。HTTPS协议需要到ca申请证书。</li>
-<li>二者使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443.</li>
+<li>linux所有文件都挂载在根目录 / 下</li>
+<li>/bin：存放可执行文件</li>
+<li>/etc：存放所有的配置文件</li>
+<li>/home：用户主目录</li>
+<li>/opt：额外软件的安装目录</li>
+<li>/lib：系统的动态连接共享库，类似win的ddl</li>
+<li>/root：系统管理员</li>
+<li>/usr：用户的应用程序和文件</li>
+<li>/usr/bin：系统用户使用的应用程序</li>
+<li>usr/src：内核源代码</li>
+<li>/var：存放不断扩充的东西eg各种日志文件</li>
+<li>/tmp：临时文件</li>
+<li>/dev：设备<a id="more"></a>
+<h3 id="文件or目录相关"><a href="#文件or目录相关" class="headerlink" title="文件or目录相关"></a>文件or目录相关</h3></li>
 </ul>
 </li>
-</ol>
-<ol start="5">
-<li>在浏览器中输入url（<a href="http://www.baidu.com）后执行的全过程：baidu.com是要访问的服务器，客户端为了访问服务器所进行的一系列关于协议的操作为" target="_blank" rel="noopener">http://www.baidu.com）后执行的全过程：baidu.com是要访问的服务器，客户端为了访问服务器所进行的一系列关于协议的操作为</a></li>
-</ol>
+<li><p>查看</p>
 <ul>
-<li>客户端浏览器通过DNS解析到<a href="http://www.baidu.com的ip地址220.181.27.48。客户端发起一个http回话到该ip，然后通过TCP进行封装数据包，输入到网络层。" target="_blank" rel="noopener">www.baidu.com的ip地址220.181.27.48。客户端发起一个http回话到该ip，然后通过TCP进行封装数据包，输入到网络层。</a></li>
-<li>在客户端的传输层，把http会话请求分成报文段，添加源和目的端口。如服务器使用80端口监听客户端的请求，客户端由系统随机选择一个端口如5000，与服务器进行交换，服务器把相应的请求返回给客户端的5000端口。然后使用IP层的IP地址查找目的端。</li>
-<li>。。。卡不懂了</li>
+<li>pwd</li>
+<li>ls//查看文件</li>
+<li>ls -a//查看包括隐藏文件的全部文件</li>
+<li>ls -l//查看文件属性</li>
+<li>cd //默认进入相对路径的目录</li>
+<li>cd / //进入绝对目录</li>
 </ul>
-<ol start="6">
-<li><p>OSI七层结构，每层结构中有哪些常见的协议？</p>
-<ol>
-<li>应用层：为应用程序提供通信服务：FTP/WWW/Telnet/NFS/SMTP</li>
-<li>表示层：定义数据格式：JPEG/GIF/ASCll/MPEG/HIML</li>
-<li>会话层：定义如何开始，控制和结束对话：RPC/SQL</li>
-<li>传输层: 选择是否提供错误恢复的协议：TCP/UDP/SPX</li>
-<li>网络层: 定义包的端到端的传送IP/IPX</li>
-<li>数据链路层：指定一个具体的链路或者媒体传输：802.11/ATM etc.</li>
-<li>物理层:物理媒介的特性 802.3/802.5</li>
-</ol>
 </li>
-<li><p>常见的一些端口号和对应的协议：</p>
+<li><p>创建</p>
+<ul>
+<li>mkdir </li>
+<li>mkdir -p //递归创建层级文件夹</li>
+</ul>
 </li>
-</ol>
+<li><p>删除</p>
+</li>
+<li><p>rm//仅能删末级的文件夹</p>
+</li>
+<li><p>rm -r //递归删除</p>
+</li>
+<li><p>rm -f//强制删除，不会警告</p>
+</li>
+<li><p>复制</p>
+<ul>
+<li>cp</li>
+</ul>
+</li>
+<li><p>移动</p>
+<ul>
+<li>rm</li>
+</ul>
+</li>
+<li><p>文件属性</p>
+<blockquote>
+<p>drwxr-xr-x</p>
+</blockquote>
+<ul>
+<li><p>d//文件夹</p>
+</li>
+<li><p>-//文件</p>
+</li>
+<li><p>l//链接？类似快捷方式</p>
+</li>
+<li><p>文件类型-root权限-其他组权限-其他人员权限</p>
+</li>
+<li><p>chgrp//更改属组</p>
+</li>
+<li><p>chown//更改所有者</p>
+</li>
+<li><p>chmod//更改属性</p>
+</li>
+<li><p>r:4 w:2 x:1 常用数字</p>
+</li>
+<li><p>owner/group/others</p>
+</li>
+<li><p>chmod 777 filename</p>
+</li>
+</ul>
+</li>
+<li><p>文件查看</p>
+<ul>
+<li>cat //从第一行开始看</li>
+<li>tac //从最后一行</li>
+<li>nl //从指定行</li>
+<li>more//翻页 空格翻页</li>
+<li>less//可以上翻页</li>
+<li>head//查看前几行</li>
+<li>head -n 20//指定行数</li>
+<li>tail//查看后几行</li>
+<li>-加要查询的字符串</li>
+</ul>
+</li>
+<li><p>硬链接和软链接</p>
+<ul>
+<li>硬链接：一个文件拥有多个路径，like深拷贝</li>
+<li>软链接：快捷方式<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">touch filename1//创建一个名为filename1的文件</span><br><span class="line">ln filename1 filename2//将filename2作为filename1的硬连接</span><br><span class="line">ln -s filename1 filename3//将filename3作为filename1的软链接，快捷方式</span><br><span class="line">echo &quot;i love cd&quot;&gt;&gt;filename1//在filename1中输入字符串</span><br><span class="line">cat filename1/2/3 //均能看见上方内容</span><br><span class="line"></span><br><span class="line">rm -rf filename1</span><br><span class="line">cat filename2//仍然有f1的内容，硬连接可以防止误删</span><br><span class="line">cat filename3//报错，3已经不是一个文件了</span><br></pre></td></tr></table></figure>
+<h3 id="账号管理"><a href="#账号管理" class="headerlink" title="账号管理"></a>账号管理</h3></li>
+</ul>
+</li>
+<li><p>属主</p>
+<ul>
+<li>创建一个名为cd的用户，并且自动创建用户的主目录</li>
+<li>useradd -m cd</li>
+<li>useradd -m cd -G 指定用户组</li>
+<li>删除cd的用户，并将目录一并删除</li>
+<li>userdel -r cd </li>
+<li>修改目录，修改组etc</li>
+<li>usermod </li>
+<li>修改用户</li>
+<li>su cd</li>
+<li>查看主机名</li>
+<li>Hostname</li>
+<li>修改密码</li>
+<li>passwd cd</li>
+<li>锁定用户</li>
+<li>Passwd -l cd</li>
+</ul>
+</li>
+<li><p>属组</p>
+<ul>
+<li>创建一个用户组，得到一个组的唯一id，缺省自增</li>
+<li>groupadd cd</li>
+<li>删除一个用户组</li>
+<li>groupdel cd</li>
+<li>修改用户组的名字，权限</li>
+<li>groupmod -n/-d/-g<h3 id="磁盘管理"><a href="#磁盘管理" class="headerlink" title="磁盘管理"></a>磁盘管理</h3></li>
+</ul>
+</li>
+<li><p>列出整体磁盘使用量</p>
+<ul>
+<li>df 默认字节</li>
+<li>df -h 换成G的计量单位</li>
+</ul>
+</li>
+<li><p>检查当前磁盘使用量</p>
+<ul>
+<li>du</li>
+<li>du -sm /* 检查根目录下每个目录所占的容量</li>
+</ul>
+</li>
+<li><p>mac或linux挂载本地磁盘或者文件</p>
+<ul>
+<li>mount  /dev/设备名字 /mnt/挂载目录</li>
+</ul>
+</li>
+<li><p>卸载设备</p>
+<ul>
+<li>umount -f 挂载位置<h3 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h3></li>
+</ul>
+</li>
+<li><p>Linux中每个程序都有自己的进程，每个进程都有一个id号，每一个进程都有父进程—root</p>
+</li>
+<li><p>进程的两种存在方式：前台，后台：基本程序在前台运行，服务在后台运行</p>
+</li>
+</ul>
+<ul>
+<li><p>查看系统当前正在进行的进程信息</p>
+<ul>
+<li>ps</li>
+<li>ps -help</li>
+<li>ps -a//所有</li>
+<li>ps -u//以用户的信息显示</li>
+<li>ps -x//后台运行的参数</li>
+<li>|管道符——A|B表A的输出结果作为输入进入B</li>
+<li>grep关键字字符串过滤</li>
+<li>ps -aux|gerp mysql—-查看mysql相关的进程</li>
+<li>ps -ef—-查看父进程信息</li>
+<li>查看父进程可以通过目录树来查看<ul>
+<li>pstree -p //显示父id</li>
+<li>pstree -u //显示用户</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>结束进程</p>
+<ul>
+<li>kill -9 进程id<h3 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h3></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>rpm—-下载rpm包</li>
+<li>解压缩安装</li>
+<li>yum在线安装</li>
+<li>系统快照保留信息</li>
+</ul>
+<h2 id="网络编程"><a href="#网络编程" class="headerlink" title="网络编程"></a>网络编程</h2><ul>
+<li>javaweb—-网页编程—-B/S</li>
+<li>网络编程—-TCP/IP—-C/S<blockquote>
+<p>地理位置不同的独立的多台计算机或者外部设备通过通信协议经过通信线路连接起来</p>
+</blockquote>
+</li>
+<li>需要<ul>
+<li>定位网络中的一台主机：ip地址，端口号—&gt;java中对应类</li>
+<li>传输协议：传输层</li>
+<li>传输数据：</li>
+</ul>
+</li>
+<li>TCP/IP四层模型对应网络协议代表</li>
+</ul>
+<pre><code>| 对应层 | 代表协议|
+|:--:|:--:|
+|应用层|HTTP，SMTP，FTP|
+|传输层|TCP，UDP|
+|网络层|IP，ARP|
+|数据链路层|IEEE 802系列|</code></pre><ul>
+<li>IP<ul>
+<li>唯一定位一台网络上的计算机—-区分主机</li>
+<li>127.0.0.1—-本机</li>
+<li>ip地址分类</li>
+<li>ipv4/ipv6<ul>
+<li>4个字节</li>
+<li>128位，8个无符号整数—-2001:0bb2:aaaa:5555:5555：6666:7777:1aaa</li>
+</ul>
+</li>
+<li>公网/私网<ul>
+<li>互联网：公网—ABCD类—-网地址是架设各种服务器必不可少的条件</li>
+<li>局域网：192:168:xxx:xxx—–专门给组织机构应用的</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>端口<ul>
+<li>一个端口代表计算机的一个进程—-区分软件—0～65535—总端口号=65535*2；</li>
+<li>单个协议下，端口号不能冲突</li>
+<li>TCP端口</li>
+<li>UDP端口</li>
+<li>Netstat 查看端口命令</li>
+<li>端口分类</li>
+<li>公有端口：0～1023—-http80—https443—-ftp21—-ssh22—-talent23</li>
+<li>程序注册端口：1024～49151—-分配给用户或程序—-Tomcat8080—-mysql3306</li>
+<li>动态端口：49152～65535</li>
+<li>端口映射：</li>
+</ul>
+</li>
+<li>通信协议<ul>
+<li>规定速率，码率，代码结构，传输控制</li>
+<li>TCP：打电话—建立连接，双向通信<ul>
+<li>稳定</li>
+<li>三次握手四次挥手<ul>
+<li>可以跟你连接吗/可以，你还在吗/在的</li>
+<li>我要断开了/我知道了我还没结束—我也要离开了/好的</li>
+</ul>
+</li>
+<li>客户端-服务端</li>
+</ul>
+</li>
+<li>UDP：发短信—不知道是否成功<ul>
+<li>不连接，不稳定</li>
+<li>客户端和服务端没有明确的界限</li>
+<li>DDOS：垃圾包饱和攻击堵塞端口</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>TCP实现聊天<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">//用TCP实现聊天伪代码</span><br><span class="line">//没有包含异常的处理</span><br><span class="line">//没有包含端口的关闭</span><br><span class="line">//client.java</span><br><span class="line">InetAddress serverIP = InetAddress.getByName(&quot;127.0.0.1&quot;);</span><br><span class="line">int port = 9999;</span><br><span class="line">//创建一个socket连接</span><br><span class="line">Socket socket =  new Socket(serverIP,port);</span><br><span class="line">//发送消息---io流</span><br><span class="line">OutputStream os = socket.getOutputStream();</span><br><span class="line">os.write(&quot;hello&quot;.getBytes());</span><br><span class="line"></span><br><span class="line">//server.java</span><br><span class="line">//服务端地址</span><br><span class="line">ServerSocket serverSocket = new ServerSocket(9999);</span><br><span class="line">//等待客户端连接</span><br><span class="line">socket = serverSocket.accept();</span><br><span class="line">//读取客户端的消息</span><br><span class="line">InputStream is = socket.getInputStream();</span><br><span class="line">ByteArrayOutputStream  baos = new ByteArrayOutputStream();</span><br><span class="line">byte[] buffer = new byte[1024];</span><br><span class="line">int len;</span><br><span class="line">while((len=is.read(buffer))!=-1)&#123;</span><br><span class="line">    baos.write(buffer,0,len);</span><br><span class="line">&#125;</span><br><span class="line">System.out.print(baos.toString());</span><br></pre></td></tr></table></figure></li>
+<li>TCP实现文件上传<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//用TCP实现聊天伪代码</span><br><span class="line">//没有包含异常的处理</span><br><span class="line">//没有包含端口的关闭</span><br><span class="line">//client.java</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<blockquote>
+<p>to be continued</p>
+</blockquote>
 
       
 
@@ -270,7 +500,7 @@
     <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9Cbasis/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/18/Linux%E6%8C%87%E4%BB%A4%E4%B8%8E%E5%9F%BA%E7%A1%80%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -284,18 +514,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/12/30/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8%E4%BC%81%E4%B8%9A%E5%BC%80%E5%8F%91%E6%B5%8B%E8%AF%95%E5%AE%9E%E4%B9%A0%E7%94%9F%E9%9D%A2%E8%AF%95%E7%BB%8F%E9%AA%8C-QAQ/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/04/18/javaweb-basis/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          字节跳动企业开发测试实习生面试经验-QAQ
+          javaweb-basis
         
       </div>
     </a>
   
   
-    <a href="/2019/12/27/HashMap-vs-HashTable/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">HashMap vs. HashTable</div>
+    <a href="/2020/04/18/%E9%98%BF%E9%87%8C%E9%A2%84%E9%9D%A2%E8%AF%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">阿里预面试</div>
       <i class="icon-circle-right"></i>
     </a>
   
