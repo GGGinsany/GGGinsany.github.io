@@ -8,14 +8,14 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Linux指令与基础网络编程 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="基础指令–可组合使用系统相关 sync &#x2F;&#x2F;关机前的同步  shutdown&#x2F;&#x2F;关机  reboot&#x2F;&#x2F;重启  halt&#x2F;&#x2F;  ifconfig&#x2F;&#x2F;查看网络配置  文件配置  linux所有文件都挂载在根目录 &#x2F; 下 &#x2F;bin：存放可执行文件 &#x2F;etc：存放所有的配置文件 &#x2F;home：用户主目录 &#x2F;opt：额外软件的安装目录 &#x2F;lib：系统的动态连接共享库，类似win的ddl &#x2F;root：系统管理">
+  <meta name="description" content="基础指令–可组合使用系统相关 sync &#x2F;&#x2F;关机前的同步 shutdown&#x2F;&#x2F;关机 reboot&#x2F;&#x2F;重启 halt&#x2F;&#x2F; ifconfig&#x2F;&#x2F;查看网络配置">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux指令与基础网络编程">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;04&#x2F;18&#x2F;Linux%E6%8C%87%E4%BB%A4%E4%B8%8E%E5%9F%BA%E7%A1%80%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="基础指令–可组合使用系统相关 sync &#x2F;&#x2F;关机前的同步  shutdown&#x2F;&#x2F;关机  reboot&#x2F;&#x2F;重启  halt&#x2F;&#x2F;  ifconfig&#x2F;&#x2F;查看网络配置  文件配置  linux所有文件都挂载在根目录 &#x2F; 下 &#x2F;bin：存放可执行文件 &#x2F;etc：存放所有的配置文件 &#x2F;home：用户主目录 &#x2F;opt：额外软件的安装目录 &#x2F;lib：系统的动态连接共享库，类似win的ddl &#x2F;root：系统管理">
+<meta property="og:description" content="基础指令–可组合使用系统相关 sync &#x2F;&#x2F;关机前的同步 shutdown&#x2F;&#x2F;关机 reboot&#x2F;&#x2F;重启 halt&#x2F;&#x2F; ifconfig&#x2F;&#x2F;查看网络配置">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-04-19T14:48:32.861Z">
+<meta property="og:updated_time" content="2020-04-19T15:31:34.685Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -169,18 +169,12 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="基础指令–可组合使用"><a href="#基础指令–可组合使用" class="headerlink" title="基础指令–可组合使用"></a>基础指令–可组合使用</h2><h3 id="系统相关"><a href="#系统相关" class="headerlink" title="系统相关"></a>系统相关</h3><ul>
-<li><p>sync //关机前的同步</p>
-</li>
-<li><p>shutdown//关机</p>
-</li>
-<li><p>reboot//重启</p>
-</li>
-<li><p>halt//</p>
-</li>
-<li><p>ifconfig//查看网络配置</p>
-</li>
-<li><p>文件配置</p>
-<ul>
+<li>sync //关机前的同步</li>
+<li>shutdown//关机</li>
+<li>reboot//重启</li>
+<li>halt//</li>
+<li>ifconfig//查看网络配置<a id="more"></a></li>
+<li>文件配置<ul>
 <li>linux所有文件都挂载在根目录 / 下</li>
 <li>/bin：存放可执行文件</li>
 <li>/etc：存放所有的配置文件</li>
@@ -193,10 +187,11 @@
 <li>usr/src：内核源代码</li>
 <li>/var：存放不断扩充的东西eg各种日志文件</li>
 <li>/tmp：临时文件</li>
-<li>/dev：设备<a id="more"></a>
-<h3 id="文件or目录相关"><a href="#文件or目录相关" class="headerlink" title="文件or目录相关"></a>文件or目录相关</h3></li>
+<li>/dev：设备</li>
 </ul>
 </li>
+</ul>
+<h3 id="文件or目录相关"><a href="#文件or目录相关" class="headerlink" title="文件or目录相关"></a>文件or目录相关</h3><ul>
 <li><p>查看</p>
 <ul>
 <li>pwd</li>

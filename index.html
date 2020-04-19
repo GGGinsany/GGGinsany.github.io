@@ -167,27 +167,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="到底什么是重定向-amp-重定向和转发的区别"><a href="#到底什么是重定向-amp-重定向和转发的区别" class="headerlink" title="到底什么是重定向&amp;重定向和转发的区别"></a>到底什么是重定向&amp;重定向和转发的区别</h2><h3 id="重定向和转发是什么"><a href="#重定向和转发是什么" class="headerlink" title="重定向和转发是什么"></a>重定向和转发是什么</h3><ul>
+        <h3 id="重定向和转发是什么"><a href="#重定向和转发是什么" class="headerlink" title="重定向和转发是什么"></a>重定向和转发是什么</h3><ul>
 <li>重定向：客户端发送请求到服务器—服务器返回一个url—客户端重新向该url发送请求—客户端得到响应</li>
-<li>转发：客户端发送请求到服务器—服务器将请求转发给同一个web应用的其他组件并返回resp—客户端得到响应</li>
-</ul>
-<h3 id="重定向与转发的区别"><a href="#重定向与转发的区别" class="headerlink" title="重定向与转发的区别"></a>重定向与转发的区别</h3><ol>
-<li>重定向访问过程结束后，statuscode=30x,浏览器地址栏中显示的URL会发生改变，由初始的URL地址变成重定向的目标URL；请求转发过程结束后，浏览器地址栏保持初始的URL地址不变。<blockquote>
-<p>重定向是显式的，转发是隐式的。</p>
-</blockquote>
-</li>
-<li>重定向的实现：response.sendRedirec();转发：request.getRequestDispatcher().forward()</li>
-<li>请求可以重定向到当前应用程序中的其他资源，还可以重定向到同一个站点上的其他应用程序中的资源，甚至是使用绝对URL重定向到其他站点的资源，而转发只能访问本web的其他组件。</li>
-<li>重定向的时候，客户端一共发出了两次请求，收到了两次回复；转发客户端只发出了一次请求。</li>
-</ol>
-<h3 id="重定向与转发的选择"><a href="#重定向与转发的选择" class="headerlink" title="重定向与转发的选择"></a>重定向与转发的选择</h3><ol>
-<li><p>重定向的速度比转发慢，因为涉及到请求的两次发送。在使用转发和重定向都无所谓的时候建议使用转发。</p>
-</li>
-<li><p>因为转发只能访问当前WEB的应用程序，所以不同WEB应用程序之间的访问，特别是要访问到另外一个WEB站点上的资源的情况，这个时候就只能使用重定向了。</p>
-</li>
-</ol>
-<h3 id="实际应用场景"><a href="#实际应用场景" class="headerlink" title="实际应用场景"></a>实际应用场景</h3><p>避免在用户重新加载页面时两次调用相同的动作：提交表单后如果涉及到数据库的保存操作，可以将提交后的页面重定向到另一个页面避免刷新带来的重复提交</p>
-
+<li>转发：客户端发送请求到服务器—服务器将请求转发给同一个web应用的其他组件并返回resp—客户端得到响应
+        
+          <a class="article-more-a" href="/2020/04/18/%E5%88%B0%E5%BA%95%E4%BB%80%E4%B9%88%E6%98%AF%E9%87%8D%E5%AE%9A%E5%90%91/#more">more >></a>
+        
       
 
       
@@ -391,31 +376,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="基础指令–可组合使用"><a href="#基础指令–可组合使用" class="headerlink" title="基础指令–可组合使用"></a>基础指令–可组合使用</h2><h3 id="系统相关"><a href="#系统相关" class="headerlink" title="系统相关"></a>系统相关</h3><ul>
-<li><p>sync //关机前的同步</p>
-</li>
-<li><p>shutdown//关机</p>
-</li>
-<li><p>reboot//重启</p>
-</li>
-<li><p>halt//</p>
-</li>
-<li><p>ifconfig//查看网络配置</p>
-</li>
-<li><p>文件配置</p>
-<ul>
-<li>linux所有文件都挂载在根目录 / 下</li>
-<li>/bin：存放可执行文件</li>
-<li>/etc：存放所有的配置文件</li>
-<li>/home：用户主目录</li>
-<li>/opt：额外软件的安装目录</li>
-<li>/lib：系统的动态连接共享库，类似win的ddl</li>
-<li>/root：系统管理员</li>
-<li>/usr：用户的应用程序和文件</li>
-<li>/usr/bin：系统用户使用的应用程序</li>
-<li>usr/src：内核源代码</li>
-<li>/var：存放不断扩充的东西eg各种日志文件</li>
-<li>/tmp：临时文件</li>
-<li>/dev：设备
+<li>sync //关机前的同步</li>
+<li>shutdown//关机</li>
+<li>reboot//重启</li>
+<li>halt//</li>
+<li>ifconfig//查看网络配置
         
           <a class="article-more-a" href="/2020/04/18/Linux%E6%8C%87%E4%BB%A4%E4%B8%8E%E5%9F%BA%E7%A1%80%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/#more">more >></a>
         
@@ -481,31 +446,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>50分钟的电话面试，把我的老底揭个底朝天，我太菜了。</p>
-<h3 id="测试相关"><a href="#测试相关" class="headerlink" title="测试相关"></a>测试相关</h3><ul>
-<li>功能测试：工作中让你印象最深刻的bug以及如何定位bug</li>
-<li>接口测试：从安全的角度为接口测试设计测试方案</li>
-<li>性能测试：如何容量摸高，如何确定拐点，如何确定服务挂掉了，cpu核数是4的时候，load为多少可以认为到达拐点</li>
-<li>埋点：怎么埋点，如何埋点</li>
-<li>算法评测：算法评测的指标，怎么评价准确率，怎么计算召回率，算法评测的测试集有没有数据集的标准</li>
-</ul>
-<h3 id="java"><a href="#java" class="headerlink" title="java"></a>java</h3><ul>
-<li>Hashmap的存储原理</li>
-<li>hashmap中key和value的存放原理，key通过hashcode来判断，那value放哪里</li>
-<li>hashmap是否是线程安全的</li>
-<li>数据库如何xx：tmd这个xx我听都没听过，回想都忘了是啥，我是大菜逼</li>
-<li>介绍redis的原理和redis的主从配置</li>
-<li>redis如何保证高性能</li>
-<li>redis如何实现持久化</li>
-<li>spring框架：微笑脸</li>
-<li>TestNG如何配置，如何生成测试报告</li>
-<li>TestNG的多线程调用方法ß</li>
-<li>如何用java实现测试效能的提升</li>
-</ul>
-<h3 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h3><ul>
-<li>学习并不深入</li>
-<li>建议通读源码</li>
-</ul>
-
+        
+          <a class="article-more-a" href="/2020/04/18/%E9%98%BF%E9%87%8C%E9%A2%84%E9%9D%A2%E8%AF%95/#more">more >></a>
+        
       
 
       
