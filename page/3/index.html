@@ -147,6 +147,76 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Java对象的创建，存储和分配" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/26/Java%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA%EF%BC%8C%E5%AD%98%E5%82%A8%E5%92%8C%E5%88%86%E9%85%8D/">Java对象的创建，存储和分配</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/26/Java%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA%EF%BC%8C%E5%AD%98%E5%82%A8%E5%92%8C%E5%88%86%E9%85%8D/" class="archive-article-date">
+  	<time datetime="2019-12-26T12:03:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h3 id="java对象的创建过程"><a href="#java对象的创建过程" class="headerlink" title="java对象的创建过程"></a>java对象的创建过程</h3><p>汇编码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">new</span><br><span class="line">dup</span><br><span class="line">invokespecial</span><br><span class="line">astore_1</span><br><span class="line">return</span><br></pre></td></tr></table></figure>
+<p>new:申请内存，赋默认值</p>
+<p>invokespecial:调用构造方法，赋初始值</p>
+<p>astore：建立关联？</p>
+        
+          <a class="article-more-a" href="/2019/12/26/Java%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA%EF%BC%8C%E5%AD%98%E5%82%A8%E5%92%8C%E5%88%86%E9%85%8D/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/26/Java%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA%EF%BC%8C%E5%AD%98%E5%82%A8%E5%92%8C%E5%88%86%E9%85%8D/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-俄罗斯方块游戏的java实现" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -750,87 +820,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/11/21/HashTable/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JavaLearningNote-Thinking-in-java" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/21/JavaLearningNote-Thinking-in-java/">JavaLearningNote-Thinking-in-java</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/21/JavaLearningNote-Thinking-in-java/" class="archive-article-date">
-  	<time datetime="2019-11-21T03:19:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="chap-2-一切都是对象"><a href="#chap-2-一切都是对象" class="headerlink" title="chap.2 一切都是对象"></a>chap.2 一切都是对象</h2><p>用引用(遥控器)操纵对象(电视机)，“String s”创建引用的同时最好初始化关联字符串对象 String s = “adfdf” ，java将未初始化的变量视为错误。</p>
-<p>String s = new String(“dsffff”) new操作符将引用与新的对象相关联</p>
-<p>五个存储数据的位置</p>
-<ul>
-<li>寄存器 </li>
-<li>堆栈</li>
-<li>堆</li>
-<li>常量存储</li>
-<li>非RAM存储</li>
-</ul>
-<p>基本类型、包装器：long 数据类型是 64 位有符号的 Java 原始数据类型。 当对整数的计算结果可能超出 int 数据类型的范围时使用<br>高精度数字<br>java中数组<br>java对象作用域</p>
-<hr>
-<p>Java类中可设置两种类型的元素：字段和方法。调用方法的行为通常被称为发送消息给对象。</p>
-<p>方法的参数列表指定</p>
-<hr>
-<p>一个Java程序的构建：</p>
-<p>static：</p>
-        
-          <a class="article-more-a" href="/2019/11/21/JavaLearningNote-Thinking-in-java/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/21/JavaLearningNote-Thinking-in-java/">展开全文 >></a>
         </p>
       
 
